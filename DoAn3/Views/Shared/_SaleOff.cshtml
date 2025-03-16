@@ -1,0 +1,21 @@
+﻿@model IEnumerable<DoAn3.Models.Dienthoai>
+<div class="nn-block">
+    <div class="nn-megamenu-sidebar-title"><i class="glyphicon glyphicon-tags"></i><h2 style="color:#000">Sale off</h2></div>
+    <br />
+    @foreach (var d in Model)
+    {
+        <div class="nn-product-box">
+            <a href="/Product/Detail/@d.masp">
+                <img class="img-responsive" style="height:90%;width:90%" src="~/Content/Image Phones/Iphone/@d.anh" />
+            </a>
+            <div class="nn-product-box-descriptions" style="border-bottom:1px solid #d8d8d8">                
+                <h3 class="nn-product-box-name">
+                    <a href="/Product/Detail/@d.tensp" title="Sản phẩm chính hãng">@d.tensp</a>
+                </h3>
+                <div class="nn-product-box-price ">
+                    <span class="" style="color:red;font-weight:bold">@Html.FormatValue(d.giasp, "{0:#,##0}")&#8363;</span>
+                </div>                
+            </div>
+        </div>
+    }
+</div><!--end block sale off-->

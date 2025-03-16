@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EcoMart - Cửa Hàng Bán Điện Thoại Uy Tín, Chất Lượng Hàng Đầu Việt Nam</title>
+    <link href="Contents/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--jquery first, bootstrap later-->
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+
+<body>
+    <div class="container" style="margin:0 auto;padding:0; background-color:#ffffff">
+        <div>
+            <img src="~/Images/banner_header_top.jpg" style="height:67px;width:100%;height:unset;" />
+        </div>
+        <header class="nn-header" style="background-color:#ef4339;margin-top:0%">
+            <div class=" col-sm-3 col-md-3 nn-text-align-center">
+                <a href="/Home/Index">
+                    <img src="~/Images/eco-mart.com.vn.jpg" style="width:100%;padding: 10px;border-radius:4px;margin-top:4%" class="img-responsive" />
+                </a>
+            </div><!--end logo-->
+            <div class="col-md-6 col-sm-6 ">
+                @Html.Partial("_Search")
+
+            </div><!--end search box-->
+            @Html.Partial("_ShopCart")
+            <div class="col-11 col-sm-12 col-md-12 ">
+                <img src="~/Images/big-docthan-1200-75-1200x75.png" alt="Giảm giá mọi sản phẩm" style="margin-left:0%;width:100%;margin-top:5px" />
+                <div class="row">
+                    <div class="col-12 col-xs-12 ">
+                        <ul class="breadcrumb">
+                            <li class="home">
+                                <a style="text-decoration:none !important   " href="/Home/Index"><span style="font-size:16px;"><i class="glyphicon glyphicon-home"></i> Trang chủ</span></a>
+                                <span class="mr_lr">&nbsp;<i class="fa fa-angle-right"></i>&nbsp;</span>
+                            </li>
+                            <li><strong><span style="font-size:16px">Tin tức</span></strong></li>
+                        </ul>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </header>
+        @*@Html.Partial("_Menu")*@
+        <div class="container row">           
+            <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">                
+                @RenderBody()
+            </div>
+        </div>
+        @Html.Partial("_Footer")
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

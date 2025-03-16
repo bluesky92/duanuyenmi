@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLPhoneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Chitietddh">
+    <Key>
+      <PropertyRef Name="mactdh" />
+    </Key>
+    <Property Name="mactdh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="madh" Type="int" />
+    <Property Name="masp" Type="int" />
+    <Property Name="slmua" Type="int" />
+    <Property Name="dongia" Type="int" />
+  </EntityType>
+  <EntityType Name="ChitietGiohang">
+    <Key>
+      <PropertyRef Name="masp" />
+      <PropertyRef Name="makh" />
+    </Key>
+    <Property Name="masp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="makh" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="soluong" Type="int" />
+    <Property Name="dongia" Type="int" />
+  </EntityType>
+  <EntityType Name="Chitiethdn">
+    <Key>
+      <PropertyRef Name="macthdn" />
+    </Key>
+    <Property Name="macthdn" Type="int" Nullable="false" />
+    <Property Name="mahdn" Type="int" />
+    <Property Name="masp" Type="int" />
+    <Property Name="soluong" Type="int" />
+    <Property Name="gianhap" Type="int" />
+  </EntityType>
+  <EntityType Name="Danhmucsp">
+    <Key>
+      <PropertyRef Name="madm" />
+    </Key>
+    <Property Name="madm" Type="int" Nullable="false" />
+    <Property Name="tendm" Type="nvarchar" MaxLength="50" />
+    <Property Name="icon" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Dienthoai">
+    <Key>
+      <PropertyRef Name="masp" />
+    </Key>
+    <Property Name="masp" Type="int" Nullable="false" />
+    <Property Name="madm" Type="int" />
+    <Property Name="tensp" Type="nvarchar" MaxLength="80" />
+    <Property Name="giasp" Type="int" />
+    <Property Name="soluong" Type="int" />
+    <Property Name="manhinh" Type="varchar" MaxLength="50" />
+    <Property Name="chip" Type="nvarchar" MaxLength="50" />
+    <Property Name="ram" Type="nvarchar" MaxLength="20" />
+    <Property Name="rom" Type="nvarchar" MaxLength="20" />
+    <Property Name="Camtrc" Type="varchar" MaxLength="50" />
+    <Property Name="Camsau" Type="varchar" MaxLength="50" />
+    <Property Name="pin" Type="nvarchar" MaxLength="50" />
+    <Property Name="anh" Type="nvarchar" MaxLength="70" />
+    <Property Name="hedh" Type="nvarchar" MaxLength="50" />
+    <Property Name="thesim" Type="nvarchar" MaxLength="50" />
+    <Property Name="giakm" Type="int" />
+    <Property Name="thenho" Type="nvarchar" MaxLength="35" />
+    <Property Name="cambien" Type="nvarchar" MaxLength="80" />
+    <Property Name="gpu" Type="nvarchar" MaxLength="50" />
+    <Property Name="timebh" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Donhang">
+    <Key>
+      <PropertyRef Name="madh" />
+    </Key>
+    <Property Name="madh" Type="int" Nullable="false" />
+    <Property Name="makh" Type="nvarchar" MaxLength="20" />
+    <Property Name="ngaylap" Type="nvarchar" MaxLength="50" />
+    <Property Name="tongtien" Type="int" />
+    <Property Name="noinhan" Type="nvarchar" MaxLength="50" />
+    <Property Name="mand" Type="nvarchar" MaxLength="50" />
+    <Property Name="ghichu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Giaban">
+    <Key>
+      <PropertyRef Name="magb" />
+    </Key>
+    <Property Name="magb" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="masp" Type="int" />
+    <Property Name="giaban" Type="int" />
+    <Property Name="ngaybd" Type="nvarchar" MaxLength="20" />
+    <Property Name="ngaykt" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Giohang">
+    <Key>
+      <PropertyRef Name="makh" />
+    </Key>
+    <Property Name="makh" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="tongtien" Type="float" />
+  </EntityType>
+  <EntityType Name="Hoadonnhap">
+    <Key>
+      <PropertyRef Name="mahdn" />
+    </Key>
+    <Property Name="mahdn" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mancc" Type="nvarchar" MaxLength="50" />
+    <Property Name="mand" Type="nvarchar" MaxLength="50" />
+    <Property Name="Thanhtien" Type="float" />
+    <Property Name="NgayNhap" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Khachhang">
+    <Key>
+      <PropertyRef Name="makh" />
+    </Key>
+    <Property Name="makh" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="tenkh" Type="nvarchar" MaxLength="45" />
+    <Property Name="sdt" Type="char" MaxLength="11" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Ngdung">
+    <Key>
+      <PropertyRef Name="mand" />
+    </Key>
+    <Property Name="mand" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="taikhoan" Type="nvarchar" MaxLength="25" />
+    <Property Name="matkhau" Type="nvarchar" MaxLength="25" />
+    <Property Name="tennd" Type="nvarchar" MaxLength="45" />
+    <Property Name="sdt" Type="nvarchar" MaxLength="10" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NhaCungCap">
+    <Key>
+      <PropertyRef Name="mancc" />
+    </Key>
+    <Property Name="mancc" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="tenncc" Type="nvarchar" MaxLength="50" />
+    <Property Name="sdt" Type="nvarchar" MaxLength="50" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TinTuc">
+    <Key>
+      <PropertyRef Name="matt" />
+    </Key>
+    <Property Name="matt" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="tieude" Type="nvarchar" MaxLength="50" />
+    <Property Name="mand" Type="nvarchar" MaxLength="50" />
+    <Property Name="ngaydang" Type="date" />
+    <Property Name="noidungdemo" Type="nvarchar" MaxLength="300" />
+    <Property Name="noidungchitiet" Type="nvarchar(max)" />
+    <Property Name="anh" Type="nvarchar" MaxLength="60" />
+  </EntityType>
+  <Association Name="FK__Chitietddh__madh__2C3393D0">
+    <End Role="Donhang" Type="Self.Donhang" Multiplicity="0..1" />
+    <End Role="Chitietddh" Type="Self.Chitietddh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donhang">
+        <PropertyRef Name="madh" />
+      </Principal>
+      <Dependent Role="Chitietddh">
+        <PropertyRef Name="madh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitietddh__masp__2D27B809">
+    <End Role="Dienthoai" Type="Self.Dienthoai" Multiplicity="0..1" />
+    <End Role="Chitietddh" Type="Self.Chitietddh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dienthoai">
+        <PropertyRef Name="masp" />
+      </Principal>
+      <Dependent Role="Chitietddh">
+        <PropertyRef Name="masp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChitietGio__makh__30F848ED">
+    <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="1" />
+    <End Role="ChitietGiohang" Type="Self.ChitietGiohang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khachhang">
+        <PropertyRef Name="makh" />
+      </Principal>
+      <Dependent Role="ChitietGiohang">
+        <PropertyRef Name="makh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChitietGio__masp__300424B4">
+    <End Role="Dienthoai" Type="Self.Dienthoai" Multiplicity="1" />
+    <End Role="ChitietGiohang" Type="Self.ChitietGiohang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dienthoai">
+        <PropertyRef Name="masp" />
+      </Principal>
+      <Dependent Role="ChitietGiohang">
+        <PropertyRef Name="masp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitiethd__mahdn__286302EC">
+    <End Role="Hoadonnhap" Type="Self.Hoadonnhap" Multiplicity="0..1" />
+    <End Role="Chitiethdn" Type="Self.Chitiethdn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hoadonnhap">
+        <PropertyRef Name="mahdn" />
+      </Principal>
+      <Dependent Role="Chitiethdn">
+        <PropertyRef Name="mahdn" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitiethdn__masp__29572725">
+    <End Role="Dienthoai" Type="Self.Dienthoai" Multiplicity="0..1" />
+    <End Role="Chitiethdn" Type="Self.Chitiethdn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dienthoai">
+        <PropertyRef Name="masp" />
+      </Principal>
+      <Dependent Role="Chitiethdn">
+        <PropertyRef Name="masp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Dienthoai__madm__1B0907CE">
+    <End Role="Danhmucsp" Type="Self.Danhmucsp" Multiplicity="0..1" />
+    <End Role="Dienthoai" Type="Self.Dienthoai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Danhmucsp">
+        <PropertyRef Name="madm" />
+      </Principal>
+      <Dependent Role="Dienthoai">
+        <PropertyRef Name="madm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Donhang__makh__20C1E124">
+    <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="0..1" />
+    <End Role="Donhang" Type="Self.Donhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khachhang">
+        <PropertyRef Name="makh" />
+      </Principal>
+      <Dependent Role="Donhang">
+        <PropertyRef Name="makh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Donhang__mand__21B6055D">
+    <End Role="Ngdung" Type="Self.Ngdung" Multiplicity="0..1" />
+    <End Role="Donhang" Type="Self.Donhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ngdung">
+        <PropertyRef Name="mand" />
+      </Principal>
+      <Dependent Role="Donhang">
+        <PropertyRef Name="mand" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Giaban__masp__1DE57479">
+    <End Role="Dienthoai" Type="Self.Dienthoai" Multiplicity="0..1" />
+    <End Role="Giaban" Type="Self.Giaban" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dienthoai">
+        <PropertyRef Name="masp" />
+      </Principal>
+      <Dependent Role="Giaban">
+        <PropertyRef Name="masp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Giohang__makh__145C0A3F">
+    <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="1" />
+    <End Role="Giohang" Type="Self.Giohang" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Khachhang">
+        <PropertyRef Name="makh" />
+      </Principal>
+      <Dependent Role="Giohang">
+        <PropertyRef Name="makh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hoadonnha__mancc__24927208">
+    <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="0..1" />
+    <End Role="Hoadonnhap" Type="Self.Hoadonnhap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaCungCap">
+        <PropertyRef Name="mancc" />
+      </Principal>
+      <Dependent Role="Hoadonnhap">
+        <PropertyRef Name="mancc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hoadonnhap__mand__25869641">
+    <End Role="Ngdung" Type="Self.Ngdung" Multiplicity="0..1" />
+    <End Role="Hoadonnhap" Type="Self.Hoadonnhap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ngdung">
+        <PropertyRef Name="mand" />
+      </Principal>
+      <Dependent Role="Hoadonnhap">
+        <PropertyRef Name="mand" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TinTuc__mand__6FE99F9F">
+    <End Role="Ngdung" Type="Self.Ngdung" Multiplicity="0..1" />
+    <End Role="TinTuc" Type="Self.TinTuc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ngdung">
+        <PropertyRef Name="mand" />
+      </Principal>
+      <Dependent Role="TinTuc">
+        <PropertyRef Name="mand" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLPhoneModelStoreContainer">
+    <EntitySet Name="Chitietddh" EntityType="Self.Chitietddh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChitietGiohang" EntityType="Self.ChitietGiohang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chitiethdn" EntityType="Self.Chitiethdn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Danhmucsp" EntityType="Self.Danhmucsp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dienthoai" EntityType="Self.Dienthoai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Donhang" EntityType="Self.Donhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Giaban" EntityType="Self.Giaban" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Giohang" EntityType="Self.Giohang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hoadonnhap" EntityType="Self.Hoadonnhap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Khachhang" EntityType="Self.Khachhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ngdung" EntityType="Self.Ngdung" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhaCungCap" EntityType="Self.NhaCungCap" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Chitietddh__madh__2C3393D0" Association="Self.FK__Chitietddh__madh__2C3393D0">
+      <End Role="Donhang" EntitySet="Donhang" />
+      <End Role="Chitietddh" EntitySet="Chitietddh" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitietddh__masp__2D27B809" Association="Self.FK__Chitietddh__masp__2D27B809">
+      <End Role="Dienthoai" EntitySet="Dienthoai" />
+      <End Role="Chitietddh" EntitySet="Chitietddh" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChitietGio__makh__30F848ED" Association="Self.FK__ChitietGio__makh__30F848ED">
+      <End Role="Khachhang" EntitySet="Khachhang" />
+      <End Role="ChitietGiohang" EntitySet="ChitietGiohang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChitietGio__masp__300424B4" Association="Self.FK__ChitietGio__masp__300424B4">
+      <End Role="Dienthoai" EntitySet="Dienthoai" />
+      <End Role="ChitietGiohang" EntitySet="ChitietGiohang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitiethd__mahdn__286302EC" Association="Self.FK__Chitiethd__mahdn__286302EC">
+      <End Role="Hoadonnhap" EntitySet="Hoadonnhap" />
+      <End Role="Chitiethdn" EntitySet="Chitiethdn" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitiethdn__masp__29572725" Association="Self.FK__Chitiethdn__masp__29572725">
+      <End Role="Dienthoai" EntitySet="Dienthoai" />
+      <End Role="Chitiethdn" EntitySet="Chitiethdn" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Dienthoai__madm__1B0907CE" Association="Self.FK__Dienthoai__madm__1B0907CE">
+      <End Role="Danhmucsp" EntitySet="Danhmucsp" />
+      <End Role="Dienthoai" EntitySet="Dienthoai" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Donhang__makh__20C1E124" Association="Self.FK__Donhang__makh__20C1E124">
+      <End Role="Khachhang" EntitySet="Khachhang" />
+      <End Role="Donhang" EntitySet="Donhang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Donhang__mand__21B6055D" Association="Self.FK__Donhang__mand__21B6055D">
+      <End Role="Ngdung" EntitySet="Ngdung" />
+      <End Role="Donhang" EntitySet="Donhang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Giaban__masp__1DE57479" Association="Self.FK__Giaban__masp__1DE57479">
+      <End Role="Dienthoai" EntitySet="Dienthoai" />
+      <End Role="Giaban" EntitySet="Giaban" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Giohang__makh__145C0A3F" Association="Self.FK__Giohang__makh__145C0A3F">
+      <End Role="Khachhang" EntitySet="Khachhang" />
+      <End Role="Giohang" EntitySet="Giohang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hoadonnha__mancc__24927208" Association="Self.FK__Hoadonnha__mancc__24927208">
+      <End Role="NhaCungCap" EntitySet="NhaCungCap" />
+      <End Role="Hoadonnhap" EntitySet="Hoadonnhap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hoadonnhap__mand__25869641" Association="Self.FK__Hoadonnhap__mand__25869641">
+      <End Role="Ngdung" EntitySet="Ngdung" />
+      <End Role="Hoadonnhap" EntitySet="Hoadonnhap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TinTuc__mand__6FE99F9F" Association="Self.FK__TinTuc__mand__6FE99F9F">
+      <End Role="Ngdung" EntitySet="Ngdung" />
+      <End Role="TinTuc" EntitySet="TinTuc" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

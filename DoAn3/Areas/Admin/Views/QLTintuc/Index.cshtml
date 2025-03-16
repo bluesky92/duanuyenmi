@@ -1,0 +1,203 @@
+﻿@model IEnumerable<DoAn3.Models.TinTuc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Assets/admin/css/sb-admin-2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <h1 class="h3 mb-8 text-gray-800">Danh sách tin tức</h1>
+        <a href="/Admin/QLTintuc/Create" class="btn btn-primary mb-2" style="color: white;background-color:#4e73df;border-color:#4e73df"><i class="fa fa-plus"></i>&nbsp; Thêm</a>
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <div class="table">
+                    <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <table id="example" class="table table-bordered table-striped table-responsive" @*cellspacing="0"*@ @*role="grid"*@ @*aria-describedby="dataTable_info" style="width: 100%;"*@>
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 25%;">
+                                                Loại Tin Tức
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 10%;">
+                                                Người Đăng
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 10%;">
+                                                Tiêu Đề
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 10%;">
+                                                Ngày Đăng
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 10%;">
+                                                ND Demo
+                                            </th>
+                                            @*<th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 5%;">
+                                                ND Chi Tiết
+                                            </th>*@
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 20%;">
+                                                Ảnh 
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 20%;">
+                                                Ảnh Phụ 1
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 10%;">
+                                                Ảnh Phụ 2
+                                            </th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 15%;">
+                                                Tác vụ
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (Model != null && Model.Count() > 0)
+                                        {
+                                            foreach (var item in Model)
+                                            {
+                                                <tr role="row" class="odd">
+                                                    <td>@item.LoaiTinTuc.tenloaitintuc</td>
+                                                    <td>@item.Ngdung.tennd</td>
+                                                    <td>@item.tieude</td>
+                                                    <td>@Html.FormatValue(item.ngaydang, "{0:dd-MM-yyyy}")</td>
+                                                    <td>@item.noidungdemo</td>
+                                                    @*<td>@item.noidungchitiet</td>*@
+                                                    <td><img src="~/Content/Image Phones/Tintuc/@item.anh" alt="Ảnh nè" style="height:auto;width:100%" /> </td>
+                                                    <td><img src="~/Content/Image Phones/Tintuc/@item.anh1" alt="Ảnh nè" style="height:auto;width:100%" /> </td>
+                                                    <td><img src="~/Content/Image Phones/Tintuc/@item.anh2" alt="Ảnh nè" style="height:auto;width:100%" /> </td>
+                                                    @*<td>@item.pin</td>*@
+                                                    <td>
+                                                        @Html.ActionLink("Sửa", "Edit", new { id = item.matt }, new { @class = "btn btn-info", @title = "Chỉnh sửa" })
+                                                        <br /><br />
+                                                        @Html.ActionLink("Chitiet", "Details", new { id = item.matt }, new { @class = "btn btn-success", @title = "Xem Chi Tiết" })
+                                                        <br /><br />
+                                                        @Html.ActionLink("Xóa", "Delete", new { id = item.matt }, new { @class = "btn btn-danger del", @title = "Xóa", @onclick = "Xoa()" })
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Assets/admin/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Assets/admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+    <script>
+        function Xoa() {
+            alert('Hãy cân nhắc cho việc xóa bản ghi?')
+        }
+    </script>
+</body>
+
+</html>
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiTinTuc.tenloaitintuc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngdung.tennd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tieude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ngaydang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.noidungdemo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.noidungchitiet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anh1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anh2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anh3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anh4)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoaiTinTuc.tenloaitintuc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ngdung.taikhoan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tieude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ngaydang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.noidungdemo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.noidungchitiet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anh1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anh2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anh3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anh4)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.matt }) |
+                @Html.ActionLink("Details", "Details", new { id = item.matt }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.matt })
+            </td>
+        </tr>
+    }
+
+</table>

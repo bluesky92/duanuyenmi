@@ -1,0 +1,148 @@
+﻿@model DoAn3.Models.TinTuc
+@{
+    ViewBag.Title = "Chitiettintuc";
+    Layout = "~/Views/Shared/_LayoutChitiettintuc.cshtml";
+}
+
+<head>
+    <link href="~/Content/css/tintuc.css" rel="stylesheet" type="text/css" />
+</head>
+@*Lam xuat ra don hang, thanh toan, mo ta co nhieu dong: dung ckeditor: what you see, what you and*@
+<div class="blog_wrapper">
+    <div class="container">
+        <div class="row" style="margin-left:-2.6%">
+            <div class="col-xl-9 col-lg-9 col-md-12">
+                <div class="article-details clearfix">
+                    <div class="article-content clearfix" style="font-size:14px;margin-top:10px">
+                        <img style="width:80%;height:auto;margin-bottom: 20px !important;" class="margin-bottom-20" src="~/Content/Image Phones/Tintuc/@Model.anh" alt="Những tin đồn iPhone 12 khiến người dùng “không buồn mới lạ”">
+                    </div>
+                    <h1 class="article-title" style="margin-bottom:10px;font-size:24px;font-weight:700;color:black;line-height:18px">@Model.tieude</h1>
+                    <div class="posts" style="font-size:12px;font-style:italic;margin-bottom:30px">
+                        @Model.ngaydang
+                    </div>
+                    <div class="rte" style="margin-top:5px;margin-bottom:30px">
+                        <p style="margin: 0 0 15px 0"> @Model.noidungchitiet</p>
+                        <p><img src="~/Content/Image Phones/Tintuc/@Model.anh1" alt="Đẹp đến từng chi tiết" /></p>
+                        <p>Các tin đồn mới nhất cho thấy bộ tính năng sẽ đến với loạt&nbsp;iPhone 12&nbsp;năm nay, trong đó có những thứ bị mất đi khiến người dùng phải thất vọng. Gạt qua những điều tốt, dưới đây là những “tin xấu” đối với dòng iPhone này.</p>
+                        <p><strong>Phụ kiện thưa thớt đi kèm</strong></p>
+                        <p>Theo các chuyên gia rò rỉ ThingsApplePro và Max Weinbach, iPhone 12 sẽ xuất xưởng trong một hộp mỏng hơn và tinh tế hơn, nhưng đó không phải là kết quả từ thiết kế sáng tạo mà vì Apple đã bỏ đi vài phụ kiện trong sản phẩm, bao gồm cặp tai nghe EarPods và củ sạc.</p>
+                        <p>Củ sạc 20W được đồn đại sẽ được bán riêng, trong khi những thứ có trong hộp sẽ là điện thoại và cáp sạc. Nhiều người có thể nghĩ rằng điều này sẽ giúp Apple giảm giá iPhone 12, nhưng họ sẽ phải thất vọng.</p>
+                        <p><strong>Giá bán cao hơn</strong></p>
+                        <p>Không chỉ không rẻ hơn vì thiếu phụ kiện đi kèm trong hộp, iPhone 12 còn được cho là có giá khởi điểm đắt hơn nhiều. Thông tin được đưa ra bởi nhà phân tích Jeff Pu cho biết giá khởi điểm của iPhone 12 sẽ là 749 USD cho mẫu 5,4 inch rẻ nhất chứ không phải là 649 USD mà Jon Prosser đồn đoán trước đó.</p>
+                        <p><img alt="Những tin đồn iPhone 12 khiến người dùng “không buồn mới lạ” - 2" data-original="https://cdn.24h.com.vn/upload/3-2020/images/2020-07-14/3-1594718999-316-width660height371.jpg" data-was-processed="true" onclick="return openNewImage(this, '')" src="~/Content/Image Phones/Tintuc/uni2.jpg"></p>
+                        <p>Giá bán này cũng cao hơn 50 USD so với giá khởi điểm iPhone 11, vốn có giá 699 USD. Mức&nbsp;giá tăng này cũng có thể được áp dụng cho phần còn lại của dòng sản phẩm, với bản rẻ nhất của mẫu iPhone 6,7 inch sẽ vượt mốc 1.000 USD.</p>
+                        <p><strong>Không có màn hình ProMotion 120 Hz</strong></p>
+                        <p>Nhà phân tích màn hình Ross Young và chuyên gia rò rỉ Max Weinbach cũng đưa ra một số tin tức khiến mọi người cảm thấy thất vọng với màn hình iPhone 12. Theo các nguồn tin chuỗi cung ứng, Apple có thể sẽ không bao gồm màn hình ProMotion 120 Hz rất được mong đợi&nbsp;trên loạt iPhone 12, bao gồm cả các bản cao cấp.</p>
+                        <p>Apple được cho là đang thử nghiệm màn hình 120 Hz một cách sốt sắng vì đội ngũ công ty muốn kết hợp nó vào iPhone 2020. Đáng buồn, màn hình không vượt qua tất cả các bài kiểm tra, trong đó iPhone 12&nbsp;Pro thất bại 3 trong số 20 thử nghiệm, còn iPhone 12 Pro Max thất bại 4 trong số 20 thử nghiệm. Do đó, công ty sẽ cho đội ngũ kỹ thuật của mình thêm một tuần nữa để làm việc trên màn hình trước khi quyết định bỏ 120 Hz trên iPhone 12.</p>
+                        <p><strong>Không phải tất cả iPhone sẽ có mmWave 5G</strong></p>
+                        <p>Theo DigiTimes, không phải tất cả các mẫu iPhone 12 sẽ xuất xưởng với khả năng tương thích mmWave 5G. Thậm chí có cả mẫu chỉ hỗ trợ 4G, điều này có thể giải thích cho tin đồn về mức giá thấp dành cho loạt iPhone 12 đã rò rỉ trước đó.</p>
+                        <p><img alt="Những tin đồn iPhone 12 khiến người dùng “không buồn mới lạ” - 4" data-original="https://cdn.24h.com.vn/upload/3-2020/images/2020-07-14/4-1594719018-986-width660height396.jpg" data-was-processed="true" onclick="return openNewImage(this, '')" src="~/Content/Image Phones/Tintuc/uni3.jpg"></p>
+                        <p><strong>Trì hoãn ngày phát hành</strong></p>
+                        <p>Hầu hết mọi tin đồn đều cho biết Apple sẽ chậm trễ trong việc phát hành loạt iPhone 12 đến tay người dùng. Thông tin mới nhất từ ​​Nikkei Asian Review cho biết việc lắp ráp iPhone 12 cuối cùng sẽ không diễn ra cho đến tháng 10. Apple vẫn có thể công bố loạt iPhone 12 vào tháng 9 nhưng họ có thể không bán điện thoại cho đến tháng 10 hoặc muộn hơn.</p>
+                        <p><img alt="Những tin đồn iPhone 12 khiến người dùng “không buồn mới lạ” - 5" data-original="https://cdn.24h.com.vn/upload/3-2020/images/2020-07-14/5-1594719030-363-width660height396.jpg" data-was-processed="true" onclick="return openNewImage(this, '')" src="~/Content/Image Phones/Tintuc/uni4.jpg"></p>
+                        <p><strong>Trạng thái máy quét LiDAR không xác định</strong></p>
+                        <p>Apple được đồn sẽ bao gồm một máy quét LiDAR trong iPhone 12, nhưng chúng ta đã nghe rất ít về hệ thống máy quét này. Đó là bởi vì hầu hết các thông tin bị rò rỉ gần đây đến từ các nhà sản xuất vỏ và phụ kiện không liên quan đến công nghệ camera của điện thoại.</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 ">
+                <div class="camnang_block">
+                    <div class="row">
+                        <img src="~/Images/Screenshot 2020-11-09 095518.png" alt="Alternate Text" />
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <div class="">
+                        <h2 class="" style="font-size:18px;font-weight:bold;text-transform:uppercase;margin-bottom:25px;border-bottom:1px solid #e4e4e4;padding-bottom:15px;position:relative">
+                            <a style="color: #231f20;text-decoration: none;background: 0 0;" href="/chitiettintuc" title="Tin tức nổi bật">Tin tức nổi bật</a>
+                        </h2>
+                    </div>
+                    <div class="">
+                        <div class="item clearfix" style="margin-bottom:30px">
+                            <div class="post-thumb">
+                                <a class="image-blog scale_hover" style="width:98px;height:auto;float:left;border-radius:3px" href="/nhung-tin-don-iphone-12-khien-nguoi-dung-khong-buon-moi-la" title="Những tin đồn iPhone 12 khiến người dùng “không buồn mới lạ”">
+
+                                    <img class="img_blog lazyload loaded" src="~/Content/Image Phones/Tintuc/@Model.anh" style="margin:0;border: 0 none;max-width: 100%;height: auto;" alt="Những tin đồn iPhone 12 khiến người dùng “không buồn mới lạ”" data-was-processed="true">
+                                </a>
+                                <div class="contentright" style="display:block;float:left;padding-left: 15px;width: calc(100% - 98px);">
+                                    <h3 style="margin-top:-3px;line-height:15px;color: #231f20;background: 0 0;font-size:13px">@Model.tieude</h3>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="aside-item aside_product_new">
+                    <h2 class="h2_sidebar_blog" style="font-size:18px;font-weight:bold;text-transform:uppercase;margin-bottom:25px;border-bottom:1px solid #e4e4e4;padding-bottom:15px;position:relative">
+                        <a href="/san-pham-noi-bat" style="color: #231f20;text-decoration: none;background: 0 0;" title="Sản phẩm gợi ý">Sản phẩm gợi ý</a>
+                    </h2>
+                    <div class="aside-content related-product">
+                        <div class="product-mini-lists">
+                            <div class="products">
+                                <div class="product-mini-item clearfix   on-sale" style="padding:15px 15px 15px 10px;border-bottom: 1px solid #e4e4e4">
+                                    <a href="/samsung-galaxy-s10" class="product-img" style="width:97px;float:left;height:auto;position:relative" title="Điện thoại Samsung Galaxy S10+">
+                                        <img class="lazyload loaded" style="max-width:100%;max-width:100%;width:auto !important;" src="~/Content/Image Phones/Iphone/iphone-11-pro-max-256gb-black-600x600.jpg" alt="Điện thoại Samsung Galaxy S10+" data-was-processed="true">
+                                    </a>
+                                    <div class="product-info" style="float:right;margin-top:1%;margin-left:0% !important;width:141px">
+                                        <h3 style="font-size:13px;line-height:18px;font-weight:400;overflow:hidden;text-overflow:ellipsis;word-break:break-word;white-space:nowrap;margin:0;margin-bottom:6px"><a href="/samsung-galaxy-s10" style="color:#231f20;text-decoration:none;" title="Điện thoại Iphone 11 Promax" class="product-name">Điện thoại Iphone 11... </a></h3>
+                                        <div class="price-box">
+                                            <span class="price f-left" style="display:inline-block;width:100%"><span style="font-size:18px;font-weight:bold;color:#ef4339" class="price product-price">15.000.000₫</span> </span> <!-- Giá Khuyến mại -->
+                                            <span class="old-price  f-left" style="float:left !important;color:#acacac;font-size:15px"><del class="sale-price">16.000.000₫</del> </span> <!-- Giá gốc -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products">
+                                <div class="product-mini-item clearfix   on-sale" style="padding:15px 15px 15px 10px;border-bottom: 1px solid #e4e4e4">
+                                    <a href="/samsung-galaxy-s10" class="product-img" style="width:97px;float:left;height:auto;position:relative" title="Điện thoại Samsung Galaxy S10+">
+                                        <img class="lazyload loaded" style="max-width:100%;max-width:100%;width:auto !important;" src="~/Content/Image Phones/Iphone/iphone-7-plus-32gb-gold-600x600-600x600.jpg" alt="Điện thoại Iphone 7 Plus" data-was-processed="true">
+                                    </a>
+                                    <div class="product-info" style="float:right;margin-top:1%;margin-left:0% !important;width:141px">
+                                        <h3 style="font-size:13px;line-height:18px;font-weight:400;overflow:hidden;text-overflow:ellipsis;word-break:break-word;white-space:nowrap;margin:0;margin-bottom:6px"><a href="/samsung-galaxy-s10" style="color:#231f20;text-decoration:none;" title="Điện thoại Iphone 7 plus" class="product-name">Điện thoại Iphone 7 Plus ... </a></h3>
+                                        <div class="price-box">
+                                            <span class="price f-left" style="display:inline-block;width:100%"><span style="font-size:18px;font-weight:bold;color:#ef4339" class="price product-price">18.990.000₫</span> </span> <!-- Giá Khuyến mại -->
+                                            <span class="old-price  f-left" style="float:left !important;color:#acacac;font-size:15px"><del class="sale-price">20.000.000₫</del> </span> <!-- Giá gốc -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products">
+                                <div class="product-mini-item clearfix   on-sale" style="padding:15px 15px 15px 10px;border-bottom: 1px solid #e4e4e4">
+                                    <a href="/samsung-galaxy-s10" class="product-img" style="width:97px;float:left;height:auto;position:relative" title="Điện thoại Samsung Galaxy S10+">
+                                        <img class="lazyload loaded" style="max-width:100%;max-width:100%;width:auto !important;" src="~/Content/Image Phones/Iphone/xiaomi-mi-note-10-lite-trang-600x600-600x600.jpg" alt="Điện thoại XiaoMi Note S10+" data-was-processed="true">
+                                    </a>
+                                    <div class="product-info" style="float:right;margin-top:1%;margin-left:0% !important;width:141px">
+                                        <h3 style="font-size:13px;line-height:18px;font-weight:400;overflow:hidden;text-overflow:ellipsis;word-break:break-word;white-space:nowrap;margin:0;margin-bottom:6px"><a href="/samsung-galaxy-s10" style="color:#231f20;text-decoration:none;" title="Điện thoại Samsung Galaxy S10+" class="product-name">Điện thoại XiaoMi... </a></h3>
+                                        <div class="price-box">
+                                            <span class="price f-left" style="display:inline-block;width:100%"><span style="font-size:18px;font-weight:bold;color:#ef4339" class="price product-price">12.000.000₫</span> </span> <!-- Giá Khuyến mại -->
+                                            <span class="old-price  f-left" style="float:left !important;color:#acacac;font-size:15px"><del class="sale-price">13.000.000₫</del> </span> <!-- Giá gốc -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products">
+                                <div class="product-mini-item clearfix   on-sale" style="padding:15px 15px 15px 10px;border-bottom: 1px solid #e4e4e4">
+                                    <a href="/samsung-galaxy-s10" class="product-img" style="width:97px;float:left;height:auto;position:relative" title="Điện thoại Samsung Galaxy S10+">
+                                        <img class="lazyload loaded" style="max-width:100%;max-width:100%;width:auto !important;" src="~/Content/Image Phones/Iphone/samsung-galaxy-note-10-plus-171220-101247-600x600.jpg" alt="Điện thoại Samsung Galaxy Note 10+" data-was-processed="true">
+                                    </a>
+                                    <div class="product-info" style="float:right;margin-top:1%;margin-left:0% !important;width:141px">
+                                        <h3 style="font-size:13px;line-height:18px;font-weight:400;overflow:hidden;text-overflow:ellipsis;word-break:break-word;white-space:nowrap;margin:0;margin-bottom:6px"><a href="/samsung-galaxy-s10" style="color:#231f20;text-decoration:none;" title="Điện thoại Samsung Galaxy S10+" class="product-name">Điện thoại Samsung... </a></h3>
+                                        <div class="price-box">
+                                            <span class="price f-left" style="display:inline-block;width:100%"><span style="font-size:18px;font-weight:bold;color:#ef4339" class="price product-price">15.990.000₫</span> </span> <!-- Giá Khuyến mại -->
+                                            <span class="old-price  f-left" style="float:left !important;color:#acacac;font-size:15px"><del class="sale-price">16.990.000₫</del> </span> <!-- Giá gốc -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

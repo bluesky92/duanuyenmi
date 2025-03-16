@@ -1,0 +1,72 @@
+﻿@model IEnumerable<DoAn3.Models.Dienthoai>
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_LayoutSearch.cshtml";
+}
+
+@*@foreach(var c in Model){
+        <div class="nn-cat-banner">
+        <img src="/Content/img/categories/@c.Category.Image" class="img-responsive" />
+    </div>
+    }*@
+<div>
+    <div class="row">
+        <div class="col-12 col-xs-12 ">
+            <ul class="breadcrumb">
+                <li class="home">
+                    <a style="text-decoration:none !important" href="/Home/Index"><span style="font-size:16px;"><i class="glyphicon glyphicon-home"></i> Trang chủ</span></a>
+                    <span class="mr_lr">&nbsp;<i class="fa fa-angle-right"></i>&nbsp;</span>
+                </li>
+                <li><strong><span style="font-size:16px">Tìm kiếm</span></strong></li>
+            </ul>
+            <hr />
+        </div>
+    </div>
+    <h2>Kết quả tìm kiếm phù hợp:</h2>
+    <br />
+    <div class="nn-block-margin-top30px">
+        <div>
+            @foreach (var d in Model)
+            {
+                <div class="col-md-3 col-sm-6 col-xs-12" style="border:1px solid #ebebeb">
+                    <div class="nn-product-box">
+                        <a href="/Product/Detail/@d.masp">
+                            <img class="img-responsive" style="width:60%;height:auto;margin-left:20%" src="~/Content/Image Phones/Iphone/@d.anh" />
+                            <img style="height:30%;width:30%;margin-top:-35%;margin-left:67%" src="~/Images/lblbaohanh.png" alt="Bảo hành ưu đãi" />
+
+                        </a>
+                        <br />
+                        <div class="nn-product-box-descriptions" style="text-align:center">
+                            <h4 class="nn-product-box-tensp">
+                                <a style="text-decoration:none" href="/Product/Detail/@d.masp" title="@d.tensp">@d.tensp</a>
+                            </h4>
+                            <div class="nn-product-box-price ">
+                                <span style="color:red;font-weight:600">@Html.FormatValue(d.giasp, "{0:#,##0}")&#8363;</span>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            $(".add-to-cart").click(function () {
+                pid = $(this).attr("data-id");
+                $.ajax({
+                    url: "/Cart/Add",
+                    data: { id: pid },
+                    success: function (response) {
+                        alert('Thêm thành công');
+                        $("#nn-cart-count").html(response.Count);
+                        $("#nn-cart-total").html(response.Total);
+                        location.href = "/Cart/Index";
+                    }
+                });
+                });
+        });
+    </script>
+}
+

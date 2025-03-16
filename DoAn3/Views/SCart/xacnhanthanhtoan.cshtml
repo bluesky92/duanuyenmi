@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "xacnhanthanhtoan";
+    Layout = "~/Views/Shared/_LayoutCart.cshtml";
+}
+
+<br />
+<div class="bar-top">
+    <a href="/SCart/Thanhtoanshow" class="buymore"><img src="~/Images/quayve.png" alt="Trở lại" />Quay lại giỏ hàng</a>
+</div><br />
+      <div class="card card-primary border-top" style="box-shadow: 0 0 20px rgba(0,0,0,.15);position:relative;display:flex;flex-direction:column;min-width:0;background-color:#fff;background-clip:border-box;border:1px solid #e3e6f0;border-radius:.35rem">
+          <div class="col-sm-12" style="border-collapse:collapse">
+              <div class="col-sm-6" style="border: 1px solid #cecdcd;">
+                  <div class="card-header" style="color:#1f2d3d;border-radius: calc(.35rem - 1px) calc(.35rem - 1px) 0 0;padding:.75rem 1.25rem;border-bottom: 1px solid #e3e6f0;margin-bottom:2%">
+                      <h4 class="card-title" style="font-weight:600;color:black">Xác Nhận Thanh Toán</h4>
+                  </div>
+                  <form role="form" action="~/SCart/ghihoadon" method="post">
+                      <div class="card-body" style="color:#858796">
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <div class="form-group">
+                                      <input type="text" class="form-control" id="tenkh" name="tenkh" value="" placeholder="Tên Khách Hàng" />
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <div class="form-group">
+                                      <input type="text" class="form-control" id="dc1" name="dc1" value="" placeholder="Địa Chỉ Khách Hàng" />
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <div class="form-group">
+                                      <input type="text" class="form-control" id="dc2" name="dc2" value="" placeholder="Địa Chỉ Người Nhận" />
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <div class="form-group">
+                                      <input type="number" class="form-control" id="cmt1" name="cmt1" value="" placeholder="CMTND người nhận" />
+                                  </div>
+                              </div>
+
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <div class="form-group">
+                                      <input type="number" class="form-control" id="cmt2" name="cmt2" value="" placeholder="CMTND khách hàng" />
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <div class="form-group">
+                                      <input type="tel" class="form-control" id="sdt1" name="sdt1" value="" placeholder="SDT Khách" />
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-12">
+                                  <div class="form-group">
+                                      <input type="tel" class="form-control" id="sdt2" name="sdt2" value="" placeholder="SDT Người Nhận" />
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="card-footer">
+                              <div class="form-actions">
+                                  &nbsp;&nbsp;<button type="submit" style="margin-top:1%" value="" class="btn btn-primary" onclick="OK()">&nbsp;Đặt hàng</button>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              <div class="col-sm-6" style="border: 1px solid #cecdcd;">
+                  <div class="card-header" style="color:#1f2d3d;border-radius: calc(.35rem - 1px) calc(.35rem - 1px) 0 0;padding:.75rem 1.25rem;border-bottom: 1px solid #e3e6f0;margin-bottom:2%">
+                      <h4 class="card-title" style="font-weight:600;color:black">Vận chuyển</h4>
+                      <span class="alert-danger" style="background-color:#d1ecf1;font-weight:600;color:red">Bạn phải nhập thông tin trước khi đặt hàng!</span>
+                      <br /><br /><br />
+                  </div>
+                  <div class="card-header" style="color:#1f2d3d;border-radius: calc(.35rem - 1px) calc(.35rem - 1px) 0 0;padding:.75rem 1.25rem;border-bottom: 1px solid #e3e6f0;margin-bottom:2%">
+                      <h4 class="card-title" style="font-weight:600;color:black">Thanh toán</h4>
+                      <div class="card-body">
+                          <span><i class="glyphicon glyphicon-record" style="color:blue"></i>&nbsp;&nbsp;&nbsp;&nbsp; Thanh toán khi giao hàng (COD) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="glyphicon glyphicon-usd" style="color:blue"></i></span>
+                          <hr />Lưu Ý:
+                          <span><i class="glyphicon glyphicon-bell" style="color:blue"></i>&nbsp; Bạn chỉ phải thanh toán khi nhận được hàng!</span>
+                      </div>
+                  </div>
+                  <br />
+                  <br /><br /><br />
+              </div>                
+          </div>
+      </div>
+<script>
+    function OK() {
+        alert('Đặt mua thành công!')
+    }
+</script>
+<br /><br /><br />
+
+

@@ -1,0 +1,20 @@
+﻿<div class="nn-cart-box col-sm-3 col-md-3 ">
+    <div class="nn-top-cart-wrapper ">
+        <div class="nn-top-cart-contain">
+            <div class="nn-block-cart">
+                <div class="nn-top-cart-title" style="background-color:#ef4339;margin-top:15%">
+                    <span class="glyphicon"><img src="~/Images/i_cart4b10.png" alt="Alternate Text" /></span>
+                    <a href="/SCart/Thanhtoanshow">
+                        Giỏ hàng<i class="caret"></i>
+                        @*<br /><span class="price" id="nn-cart-total">Tổng: <strong>@Html.FormatValue(ShoppingCart.Cart.Total, "{0:#,##0}")</strong><span>đ</span></span>*@
+                    </a>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/User/Login"><i class="glyphicon glyphicon-user" style="color:white;font-size:18px"></i>Tài Khoản</a></span>
+                </div>
+                <div class="nn-top-cart-content" style="overflow: hidden; display: none;">
+                    <p class="empty">Bạn không có sản phẩm nào trong giỏ hàng.</p>
+                    <div class="top-subtotal">Tổng tiền: <span class="price">0đ</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--end cart box-->

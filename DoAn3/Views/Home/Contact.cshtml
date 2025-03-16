@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_LayoutSearch.cshtml";
+}
+<style>
+    #mapCanvas {
+        height: 600px;
+    }
+</style>
+<script src="https://polyfill.io/v3/polyfill.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/ggmapjs.js"></script>
+<script src="~/Scripts/Contacter.js"></script>
+@*<script src="https://maps.googleapis.com/maps/api/js"></script>*@
+<script>
+    function initMap() {
+        const uluru = { lat: 21.067391105282244, lng: 105.82853251897038 };
+        const map = new google.maps.Map(document.getElementById("mapCanvas"), {
+            zoom: 18,
+            center: uluru,
+        });
+        const contentString = '@Html.Raw("<p>Cửa hàng bán điện thoại EcoShop</p><p> 236 Âu Cơ, Quảng An, Tây Hồ, Hà Nội, Việt Nam</p><p>Điện thoại: 0982977490</p>")';
+
+        const infowindow = new google.maps.InfoWindow({
+            content: contentString,
+        });
+        const marker = new google.maps.Marker({
+            position: uluru,
+            map,
+            title: "Địa chỉ",
+        });
+        marker.addListener("click", () => {
+            infowindow.open(map, marker);
+        });
+    }
+    google.maps.event.addDomListener(window, 'load', initMap)
+</script>
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6 ">
+                <h3 class="alert alert-success">THÔNG TIN LIÊN HỆ</h3>
+                <span class="glyphicon glyphicon-globe" style="font-size:16px;color:#ef4339;font-weight:600"></span> &nbsp; Công ty Cổ phần EcoShop <br /><br />
+                <span class="glyphicon glyphicon-link" style="font-size:16px;color:#ef4339;font-weight:600"></span> &nbsp; <b>Địa chỉ:</b> 236 Âu Cơ, Quảng An, Tây Hồ, Hà Nội, Việt Nam <br /><br />
+                <span class="glyphicon glyphicon-earphone" style="font-size:16px;color:#ef4339;font-weight:600"></span> &nbsp; <b>Điện thoại:</b> 0982977490
+                <br />
+                <h3 class="alert alert-info">GỬI THÔNG TIN CHO CHÚNG TÔI!</h3>
+                <p>Hãy liên hệ ngay với chúng tôi để được nhận những thông tin tư vấn về sản phẩm cùng nhiều ưu đãi hấp dẫn dành cho bạn!</p><br />
+                <form action="/" method="post">
+                    <div class="form-group">
+                        <input type="text" id="txtName" class="form-control" name="name" value="" placeholder="Họ và tên" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtMobile" class="form-control" name="name" value="" placeholder="Điện thoại" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtAddress" class="form-control" name="name" value="" placeholder="Địa chỉ" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="txtEmail" class="form-control" name="name" value="" placeholder="Email" />
+                    </div>
+                    <div class="form-group">
+                        <textarea id="txtContent" class="form-control" name="name" value="" placeholder="Nội dung"></textarea>
+
+                    </div>
+                    <button id="btnSend" class="btn btn-danger">Gửi thông tin</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h3 class="alert alert-info">VỊ TRÍ SHOP</h3>
+                <div class="map" id="mapCanvas">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

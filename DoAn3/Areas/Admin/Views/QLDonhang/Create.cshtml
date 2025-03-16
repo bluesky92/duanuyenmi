@@ -1,0 +1,138 @@
+﻿@model DoAn3.Models.Donhang
+    @{
+        ViewBag.Title = "Create";
+        Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    }
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-left">
+                            <li class="breadcrumb-item"><a href="/Admin/QLDonhang/Index">Danh sách đơn hàng</a></li>
+                            <li class="breadcrumb-item active">Thêm</li>
+                        </ol>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <div class="card card-primary">
+            <div class="card-header" style="background-color:#ffc107;color:#1f2d3d">
+                <h4 class="card-title">Thêm Đơn Hàng </h4>
+            </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form role="form">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.hovaten, "Người mua", htmlAttributes: new { @class = "control-label col-md-5" })
+                                @Html.EditorFor(model => model.hovaten, new { htmlAttributes = new { @class = "form-control"} })
+                                @Html.ValidationMessageFor(model => model.hovaten, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.makh, "Mã khách hàng", htmlAttributes: new { @class = "control-label col-md-7" })
+                                @Html.EditorFor(model => model.makh, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.makh, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ngaylap, "Ngày lập", htmlAttributes: new { @class = "control-label col-md-7" })
+                                @Html.EditorFor(model => model.ngaylap, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ngaylap, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.tongtien, "Tổng tiền", htmlAttributes: new { @class = "control-label col-md-7" })
+                                @Html.EditorFor(model => model.tongtien, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.tongtien, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.mand, "Số lượng", htmlAttributes: new { @class = "control-label col-md-7" })
+                                @Html.EditorFor(model => model.mand, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.mand, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ghichu, "Ghi chú", htmlAttributes: new { @class = "control-label col-md-7" })
+                                @Html.EditorFor(model => model.ghichu, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.ghichu, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.trangthaidonhang, "Trạng thái", htmlAttributes: new { @class = "control-label col-md-5" })
+                                @Html.EditorFor(model => model.trangthaidonhang, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.trangthaidonhang, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.diachigiaohang, "Đ/c giao hàng", htmlAttributes: new { @class = "control-label col-md-7" })
+                                @Html.EditorFor(model => model.diachigiaohang, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.diachigiaohang, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.diachikhachhang, "Đ/c khách hàng", htmlAttributes: new { @class = "control-label col-md-7" })
+                                @Html.EditorFor(model => model.diachikhachhang, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.diachikhachhang, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.sodienthoaikhachhang, "SĐT khách hàng", htmlAttributes: new { @class = "control-label col-md-7" })
+                                @Html.EditorFor(model => model.sodienthoaikhachhang, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.sodienthoaikhachhang, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.socmtndnguoinhan, "SĐT người nhận", htmlAttributes: new { @class = "control-label col-md-7" })
+                                @Html.EditorFor(model => model.socmtndnguoinhan, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.socmtndnguoinhan, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.socmtndkh, "Số CMTND KH", htmlAttributes: new { @class = "control-label col-md-7" })
+                                @Html.EditorFor(model => model.socmtndkh, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.socmtndkh, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                    &nbsp;&nbsp;<button type="submit" value="Create" class="btn btn-primary"> <i class="fa fa-plus"></i>&nbsp;Thêm</button>
+                </div>
+            </form>
+        </div>
+    }
+    <script src="~/Scripts/jquery.validate.js"></script>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

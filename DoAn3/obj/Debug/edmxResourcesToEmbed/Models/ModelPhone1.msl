@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLPhoneModelStoreContainer" CdmEntityContainer="QLPhoneEntities">
+    <EntitySetMapping Name="Chitietddh">
+      <EntityTypeMapping TypeName="QLPhoneModel.Chitietddh">
+        <MappingFragment StoreEntitySet="Chitietddh">
+          <ScalarProperty Name="mactdh" ColumnName="mactdh" />
+          <ScalarProperty Name="madh" ColumnName="madh" />
+          <ScalarProperty Name="masp" ColumnName="masp" />
+          <ScalarProperty Name="slmua" ColumnName="slmua" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChitietGiohang">
+      <EntityTypeMapping TypeName="QLPhoneModel.ChitietGiohang">
+        <MappingFragment StoreEntitySet="ChitietGiohang">
+          <ScalarProperty Name="masp" ColumnName="masp" />
+          <ScalarProperty Name="makh" ColumnName="makh" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chitiethdn">
+      <EntityTypeMapping TypeName="QLPhoneModel.Chitiethdn">
+        <MappingFragment StoreEntitySet="Chitiethdn">
+          <ScalarProperty Name="macthdn" ColumnName="macthdn" />
+          <ScalarProperty Name="mahdn" ColumnName="mahdn" />
+          <ScalarProperty Name="masp" ColumnName="masp" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="gianhap" ColumnName="gianhap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Danhmucsp">
+      <EntityTypeMapping TypeName="QLPhoneModel.Danhmucsp">
+        <MappingFragment StoreEntitySet="Danhmucsp">
+          <ScalarProperty Name="madm" ColumnName="madm" />
+          <ScalarProperty Name="tendm" ColumnName="tendm" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dienthoai">
+      <EntityTypeMapping TypeName="QLPhoneModel.Dienthoai">
+        <MappingFragment StoreEntitySet="Dienthoai">
+          <ScalarProperty Name="masp" ColumnName="masp" />
+          <ScalarProperty Name="madm" ColumnName="madm" />
+          <ScalarProperty Name="tensp" ColumnName="tensp" />
+          <ScalarProperty Name="giasp" ColumnName="giasp" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="manhinh" ColumnName="manhinh" />
+          <ScalarProperty Name="chip" ColumnName="chip" />
+          <ScalarProperty Name="ram" ColumnName="ram" />
+          <ScalarProperty Name="rom" ColumnName="rom" />
+          <ScalarProperty Name="Camtrc" ColumnName="Camtrc" />
+          <ScalarProperty Name="Camsau" ColumnName="Camsau" />
+          <ScalarProperty Name="pin" ColumnName="pin" />
+          <ScalarProperty Name="anh" ColumnName="anh" />
+          <ScalarProperty Name="hedh" ColumnName="hedh" />
+          <ScalarProperty Name="thesim" ColumnName="thesim" />
+          <ScalarProperty Name="giakm" ColumnName="giakm" />
+          <ScalarProperty Name="thenho" ColumnName="thenho" />
+          <ScalarProperty Name="cambien" ColumnName="cambien" />
+          <ScalarProperty Name="gpu" ColumnName="gpu" />
+          <ScalarProperty Name="timebh" ColumnName="timebh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donhang">
+      <EntityTypeMapping TypeName="QLPhoneModel.Donhang">
+        <MappingFragment StoreEntitySet="Donhang">
+          <ScalarProperty Name="madh" ColumnName="madh" />
+          <ScalarProperty Name="makh" ColumnName="makh" />
+          <ScalarProperty Name="ngaylap" ColumnName="ngaylap" />
+          <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+          <ScalarProperty Name="noinhan" ColumnName="noinhan" />
+          <ScalarProperty Name="mand" ColumnName="mand" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Giaban">
+      <EntityTypeMapping TypeName="QLPhoneModel.Giaban">
+        <MappingFragment StoreEntitySet="Giaban">
+          <ScalarProperty Name="magb" ColumnName="magb" />
+          <ScalarProperty Name="masp" ColumnName="masp" />
+          <ScalarProperty Name="giaban1" ColumnName="giaban" />
+          <ScalarProperty Name="ngaybd" ColumnName="ngaybd" />
+          <ScalarProperty Name="ngaykt" ColumnName="ngaykt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Giohang">
+      <EntityTypeMapping TypeName="QLPhoneModel.Giohang">
+        <MappingFragment StoreEntitySet="Giohang">
+          <ScalarProperty Name="makh" ColumnName="makh" />
+          <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hoadonnhap">
+      <EntityTypeMapping TypeName="QLPhoneModel.Hoadonnhap">
+        <MappingFragment StoreEntitySet="Hoadonnhap">
+          <ScalarProperty Name="mahdn" ColumnName="mahdn" />
+          <ScalarProperty Name="mancc" ColumnName="mancc" />
+          <ScalarProperty Name="mand" ColumnName="mand" />
+          <ScalarProperty Name="Thanhtien" ColumnName="Thanhtien" />
+          <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khachhang">
+      <EntityTypeMapping TypeName="QLPhoneModel.Khachhang">
+        <MappingFragment StoreEntitySet="Khachhang">
+          <ScalarProperty Name="makh" ColumnName="makh" />
+          <ScalarProperty Name="tenkh" ColumnName="tenkh" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ngdung">
+      <EntityTypeMapping TypeName="QLPhoneModel.Ngdung">
+        <MappingFragment StoreEntitySet="Ngdung">
+          <ScalarProperty Name="mand" ColumnName="mand" />
+          <ScalarProperty Name="taikhoan" ColumnName="taikhoan" />
+          <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+          <ScalarProperty Name="tennd" ColumnName="tennd" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhaCungCap">
+      <EntityTypeMapping TypeName="QLPhoneModel.NhaCungCap">
+        <MappingFragment StoreEntitySet="NhaCungCap">
+          <ScalarProperty Name="mancc" ColumnName="mancc" />
+          <ScalarProperty Name="tenncc" ColumnName="tenncc" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TinTuc">
+      <EntityTypeMapping TypeName="QLPhoneModel.TinTuc">
+        <MappingFragment StoreEntitySet="TinTuc">
+          <ScalarProperty Name="matt" ColumnName="matt" />
+          <ScalarProperty Name="tieude" ColumnName="tieude" />
+          <ScalarProperty Name="mand" ColumnName="mand" />
+          <ScalarProperty Name="ngaydang" ColumnName="ngaydang" />
+          <ScalarProperty Name="noidungdemo" ColumnName="noidungdemo" />
+          <ScalarProperty Name="noidungchitiet" ColumnName="noidungchitiet" />
+          <ScalarProperty Name="anh" ColumnName="anh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,89 @@
+﻿@model IEnumerable<DoAn3.Models.Danhmucsp>
+@{
+    ViewBag.Title = "Home Page";
+}
+<div>
+    @foreach (var c in Model)
+    {
+        var items = c.Dienthoai.ToList().Take(8);
+        <div class="nn-block-margin-top30px">
+            <figure style="background-color:#fff;display:block;">
+                <h2 style="background-color:#fed101">@c.tensection</h2>
+            </figure>
+            <i class="glyphicon glyphicon-tags"></i>
+            <br />
+            @foreach (var d in items)
+            {
+                <div class="col-md-3" style="border-right: 1px solid #eee;border-bottom: 1px solid #eee;border-left: 1px solid #eee;border-top: 1px solid #eee">
+                    <div class="nn-product-box">
+                        <a href="/Product/Detail/@d.masp" style="padding-top:5%">
+                            <img class="zoom img-responsive" src="~/Content/Image Phones/Iphone/@d.anh" />
+                        </a>
+                        <div class="nn-product-box-descriptions">
+                            <h3 class="nn-product-box-name">
+                                <a href="/Product/Detail/@d.masp" title="Điện thoại chính hãng" data-id="@d.masp">@d.tensp</a>
+                            </h3>
+                            @*<div class="buttons_added">
+                                <input aria-label="quantity" class="input-qty" max="10" min="1" name="" id="soluong" type="number" value="1" />
+                            </div>*@
+                            <div class="nn-product-box-price ">
+                                <span class="" style="color:red;font-weight:bold">@Html.FormatValue(d.giasp, "{0:#,##0}")&#8363;</span>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            }
+            @*<div><a class="pull-right alert-link" href="/Product/Category?ma=@d.masp"><h6>View More...</h6></a></div>*@
+        </div>
+        <div class="clearfix"></div>
+    }
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div>
+        <img src="~/Images/mp.png" alt="" style="width:100% ;height:auto" />
+    </div>
+    <style>
+        .zoom {
+            padding: 10px;
+            transition: transform .3s;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .zoom:hover {
+            -ms-transform: scale(1.15); /* IE 9 */
+            -webkit-transform: scale(1.15); /* Safari 3-8 */
+            transform: scale(1.15);
+            overflow: hidden;
+        }
+    </style>
+</div>
+<script>
+    function muahang(id) {
+        var soluong = document.getElementById("soluong").value;
+        // alert("thong tin=" + id + ": soluong=" + soluong);
+        document.location.href = "/SCart/giohang?id=" + id + "&soluong=" + soluong;
+        //window.location=myURL;
+    }
+</script>
+@*@section scripts{
+    <script>
+        $(function () {
+            $(".add-to-cart").click(function () {
+                pid = $(this).attr("data-id");
+                $.ajax({
+                    url: "/Cart/Add",
+                    data: { id: pid },
+                    success: function (response) {
+                        alert('Thêm vào giỏ thành công!');
+                        $("#nn-cart-count").html(response.Count);
+                        $("#nn-cart-total").html(response.Total);
+                    }
+                });                
+            });
+        });
+    </script>
+}*@

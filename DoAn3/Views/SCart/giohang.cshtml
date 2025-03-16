@@ -1,0 +1,92 @@
+﻿@model IEnumerable<DoAn3.Models.shopcart>
+@{
+    ViewBag.Title = "giohang";
+    Layout = "~/Views/Shared/_LayoutCart.cshtml";
+}
+
+<br />
+
+<div class="bar-top">
+    <a href="/Home/Index" class="buymore"><img src="~/Images/quayve.png" alt="Trở lại" />Quay Lại Trang Chủ</a>
+</div><br />
+<div style="display:block;border: 1px solid #d8d8d8;box-shadow: 0 0 20px rgba(0,0,0,.15);">
+    <div class="card-header" style="background-color:#357ebd;color:#1f2d3d;border-radius: calc(.35rem - 1px) calc(.35rem - 1px) 0 0;
+        padding:.75rem 1.25rem;border-bottom: 1px solid #e3e6f0;margin-bottom:2%">
+        <h2 style="text-align:center;color:#fff">Giỏ Hàng Của Bạn</h2>
+    </div>
+    <hr />
+    @if (Model != null)
+    {
+        <table class="table table-hover table-striped">
+            <thead> 
+                <tr>
+                    <th style="width:10%">Mã</th>
+                    <th style="width:20%">Tên Sản Phẩm</th>
+                    <th style="width:10%">Đơn Giá</th>
+                    <th style="width:10%">Số lượng</th>
+                    <th style="width:20%">Thành Tiền</th>
+                    <th style="width:20%">Ảnh</th>
+                    <th style="width:10%">Loại Bỏ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td>@item.id</td>
+                        <td>@item.tensp</td>
+                        <td>@Html.FormatValue(item.dongia, "{0:#,##0}")đ</td>
+                        <td>@item.soluong</td>
+                        <td>@Html.FormatValue(item.thanhtien, "{0:#,##0}")đ</td>
+                        <td>
+                            <img class="img-responsive" style="height:auto;width:70%" src="~/Content/Image Phones/Iphone/@item.anh" />
+                        </td>
+                        <td>
+                            <button class="remove-from-cart btn btn-danger" data-id="@item.id" />Xóa
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <th colspan="6" style="text-align:right">Tổng Tiền:</th>
+                    <th>@Html.FormatValue(ShoppingCart.Cart.Total, "{0:#,##0}")đ</th>
+                    <th></th>
+                </tr>
+
+            </tbody>
+        </table>
+        <form action="/Cart/Clear" method="post">
+            <button class="btn btn-default but" style="background:#ef4339;border: 1px solid #ef4339;font-weight:600">
+                <span class="glyphicon glyphicon-trash sp"></span>
+                <span class="txt" style="color:#fff">Xóa Giỏ</span>
+            </button>
+            <a href="/Home/Index" class="btn btn-default but" style="background:#ef4339;border: 1px solid #ef4339;font-weight:600">
+                <span class="glyphicon glyphicon-plus sp"></span>
+                <span class="txt" style="color:#fff">Mua Thêm</span>
+            </a>
+            <a href="/Cart/xacnhanthanhtoan" class="btn btn-default but" style="background:#ef4339;border: 1px solid #ef4339;font-weight:600">
+                <span class="glyphicon glyphicon-ok sp"></span>
+                <span class="txt" style="color:#fff">Tiến Hành Thanh Toán</span>
+            </a>
+        </form>
+        <style>
+
+            .but:hover {
+                background-color: #fff !important;
+                color: #ef4339 !important;
+            }
+
+            .but .sp:hover {
+                color: #ef4339 !important;
+            }
+
+            .but .txt:hover {
+                color: #ef4339 !important;
+            }
+        </style>
+    }
+    </div>
+}
+    
+
+

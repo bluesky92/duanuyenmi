@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLPhoneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Chitietddh">
+    <Key>
+      <PropertyRef Name="mactdh" />
+    </Key>
+    <Property Name="mactdh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="madh" Type="Int32" />
+    <Property Name="masp" Type="Int32" />
+    <Property Name="slmua" Type="Int32" />
+    <Property Name="dongia" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ChitietGiohang">
+    <Key>
+      <PropertyRef Name="masp" />
+      <PropertyRef Name="makh" />
+    </Key>
+    <Property Name="masp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="makh" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="soluong" Type="Int32" />
+    <Property Name="dongia" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Chitiethdn">
+    <Key>
+      <PropertyRef Name="macthdn" />
+    </Key>
+    <Property Name="macthdn" Type="Int32" Nullable="false" />
+    <Property Name="mahdn" Type="Int32" />
+    <Property Name="masp" Type="Int32" />
+    <Property Name="soluong" Type="Int32" />
+    <Property Name="gianhap" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Danhmucsp">
+    <Key>
+      <PropertyRef Name="madm" />
+    </Key>
+    <Property Name="madm" Type="Int32" Nullable="false" />
+    <Property Name="tendm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="icon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Dienthoai">
+    <Key>
+      <PropertyRef Name="masp" />
+    </Key>
+    <Property Name="masp" Type="Int32" Nullable="false" />
+    <Property Name="madm" Type="Int32" />
+    <Property Name="tensp" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="giasp" Type="Int32" />
+    <Property Name="soluong" Type="Int32" />
+    <Property Name="manhinh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="chip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ram" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="rom" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Camtrc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Camsau" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="pin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="anh" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="hedh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="thesim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="giakm" Type="Int32" />
+    <Property Name="thenho" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="cambien" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="gpu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="timebh" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Donhang">
+    <Key>
+      <PropertyRef Name="madh" />
+    </Key>
+    <Property Name="madh" Type="Int32" Nullable="false" />
+    <Property Name="makh" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ngaylap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tongtien" Type="Int32" />
+    <Property Name="noinhan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ghichu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Giaban">
+    <Key>
+      <PropertyRef Name="magb" />
+    </Key>
+    <Property Name="magb" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="masp" Type="Int32" />
+    <Property Name="giaban1" Type="Int32" />
+    <Property Name="ngaybd" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ngaykt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Giohang">
+    <Key>
+      <PropertyRef Name="makh" />
+    </Key>
+    <Property Name="makh" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tongtien" Type="Double" />
+  </EntityType>
+  <EntityType Name="Hoadonnhap">
+    <Key>
+      <PropertyRef Name="mahdn" />
+    </Key>
+    <Property Name="mahdn" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="mancc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Thanhtien" Type="Double" />
+    <Property Name="NgayNhap" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Khachhang">
+    <Key>
+      <PropertyRef Name="makh" />
+    </Key>
+    <Property Name="makh" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tenkh" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="sdt" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+    <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Ngdung">
+    <Key>
+      <PropertyRef Name="mand" />
+    </Key>
+    <Property Name="mand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="taikhoan" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="matkhau" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="tennd" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="sdt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NhaCungCap">
+    <Key>
+      <PropertyRef Name="mancc" />
+    </Key>
+    <Property Name="mancc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tenncc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TinTuc">
+    <Key>
+      <PropertyRef Name="matt" />
+    </Key>
+    <Property Name="matt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tieude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ngaydang" Type="DateTime" Precision="0" />
+    <Property Name="noidungdemo" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="noidungchitiet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="anh" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK__Chitietddh__madh__2C3393D0">
+    <End Role="Donhang" Type="Self.Donhang" Multiplicity="0..1" />
+    <End Role="Chitietddh" Type="Self.Chitietddh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donhang">
+        <PropertyRef Name="madh" />
+      </Principal>
+      <Dependent Role="Chitietddh">
+        <PropertyRef Name="madh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitietddh__masp__2D27B809">
+    <End Role="Dienthoai" Type="Self.Dienthoai" Multiplicity="0..1" />
+    <End Role="Chitietddh" Type="Self.Chitietddh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dienthoai">
+        <PropertyRef Name="masp" />
+      </Principal>
+      <Dependent Role="Chitietddh">
+        <PropertyRef Name="masp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChitietGio__makh__30F848ED">
+    <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="1" />
+    <End Role="ChitietGiohang" Type="Self.ChitietGiohang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khachhang">
+        <PropertyRef Name="makh" />
+      </Principal>
+      <Dependent Role="ChitietGiohang">
+        <PropertyRef Name="makh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChitietGio__masp__300424B4">
+    <End Role="Dienthoai" Type="Self.Dienthoai" Multiplicity="1" />
+    <End Role="ChitietGiohang" Type="Self.ChitietGiohang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dienthoai">
+        <PropertyRef Name="masp" />
+      </Principal>
+      <Dependent Role="ChitietGiohang">
+        <PropertyRef Name="masp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitiethd__mahdn__286302EC">
+    <End Role="Hoadonnhap" Type="Self.Hoadonnhap" Multiplicity="0..1" />
+    <End Role="Chitiethdn" Type="Self.Chitiethdn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hoadonnhap">
+        <PropertyRef Name="mahdn" />
+      </Principal>
+      <Dependent Role="Chitiethdn">
+        <PropertyRef Name="mahdn" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitiethdn__masp__29572725">
+    <End Role="Dienthoai" Type="Self.Dienthoai" Multiplicity="0..1" />
+    <End Role="Chitiethdn" Type="Self.Chitiethdn" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dienthoai">
+        <PropertyRef Name="masp" />
+      </Principal>
+      <Dependent Role="Chitiethdn">
+        <PropertyRef Name="masp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Dienthoai__madm__1B0907CE">
+    <End Role="Danhmucsp" Type="Self.Danhmucsp" Multiplicity="0..1" />
+    <End Role="Dienthoai" Type="Self.Dienthoai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Danhmucsp">
+        <PropertyRef Name="madm" />
+      </Principal>
+      <Dependent Role="Dienthoai">
+        <PropertyRef Name="madm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Giaban__masp__1DE57479">
+    <End Role="Dienthoai" Type="Self.Dienthoai" Multiplicity="0..1" />
+    <End Role="Giaban" Type="Self.Giaban" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dienthoai">
+        <PropertyRef Name="masp" />
+      </Principal>
+      <Dependent Role="Giaban">
+        <PropertyRef Name="masp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Donhang__makh__20C1E124">
+    <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="0..1" />
+    <End Role="Donhang" Type="Self.Donhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khachhang">
+        <PropertyRef Name="makh" />
+      </Principal>
+      <Dependent Role="Donhang">
+        <PropertyRef Name="makh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Donhang__mand__21B6055D">
+    <End Role="Ngdung" Type="Self.Ngdung" Multiplicity="0..1" />
+    <End Role="Donhang" Type="Self.Donhang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ngdung">
+        <PropertyRef Name="mand" />
+      </Principal>
+      <Dependent Role="Donhang">
+        <PropertyRef Name="mand" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Giohang__makh__145C0A3F">
+    <End Role="Khachhang" Type="Self.Khachhang" Multiplicity="1" />
+    <End Role="Giohang" Type="Self.Giohang" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Khachhang">
+        <PropertyRef Name="makh" />
+      </Principal>
+      <Dependent Role="Giohang">
+        <PropertyRef Name="makh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hoadonnha__mancc__24927208">
+    <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="0..1" />
+    <End Role="Hoadonnhap" Type="Self.Hoadonnhap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaCungCap">
+        <PropertyRef Name="mancc" />
+      </Principal>
+      <Dependent Role="Hoadonnhap">
+        <PropertyRef Name="mancc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hoadonnhap__mand__25869641">
+    <End Role="Ngdung" Type="Self.Ngdung" Multiplicity="0..1" />
+    <End Role="Hoadonnhap" Type="Self.Hoadonnhap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ngdung">
+        <PropertyRef Name="mand" />
+      </Principal>
+      <Dependent Role="Hoadonnhap">
+        <PropertyRef Name="mand" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TinTuc__mand__6FE99F9F">
+    <End Role="Ngdung" Type="Self.Ngdung" Multiplicity="0..1" />
+    <End Role="TinTuc" Type="Self.TinTuc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ngdung">
+        <PropertyRef Name="mand" />
+      </Principal>
+      <Dependent Role="TinTuc">
+        <PropertyRef Name="mand" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLPhoneEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Chitietddh" EntityType="Self.Chitietddh" />
+    <EntitySet Name="ChitietGiohang" EntityType="Self.ChitietGiohang" />
+    <EntitySet Name="Chitiethdn" EntityType="Self.Chitiethdn" />
+    <EntitySet Name="Danhmucsp" EntityType="Self.Danhmucsp" />
+    <EntitySet Name="Dienthoai" EntityType="Self.Dienthoai" />
+    <EntitySet Name="Donhang" EntityType="Self.Donhang" />
+    <EntitySet Name="Giaban" EntityType="Self.Giaban" />
+    <EntitySet Name="Giohang" EntityType="Self.Giohang" />
+    <EntitySet Name="Hoadonnhap" EntityType="Self.Hoadonnhap" />
+    <EntitySet Name="Khachhang" EntityType="Self.Khachhang" />
+    <EntitySet Name="Ngdung" EntityType="Self.Ngdung" />
+    <EntitySet Name="NhaCungCap" EntityType="Self.NhaCungCap" />
+    <EntitySet Name="TinTuc" EntityType="Self.TinTuc" />
+    <AssociationSet Name="FK__Chitietddh__madh__2C3393D0" Association="Self.FK__Chitietddh__madh__2C3393D0">
+      <End Role="Donhang" EntitySet="Donhang" />
+      <End Role="Chitietddh" EntitySet="Chitietddh" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitietddh__masp__2D27B809" Association="Self.FK__Chitietddh__masp__2D27B809">
+      <End Role="Dienthoai" EntitySet="Dienthoai" />
+      <End Role="Chitietddh" EntitySet="Chitietddh" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChitietGio__makh__30F848ED" Association="Self.FK__ChitietGio__makh__30F848ED">
+      <End Role="Khachhang" EntitySet="Khachhang" />
+      <End Role="ChitietGiohang" EntitySet="ChitietGiohang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChitietGio__masp__300424B4" Association="Self.FK__ChitietGio__masp__300424B4">
+      <End Role="Dienthoai" EntitySet="Dienthoai" />
+      <End Role="ChitietGiohang" EntitySet="ChitietGiohang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitiethd__mahdn__286302EC" Association="Self.FK__Chitiethd__mahdn__286302EC">
+      <End Role="Hoadonnhap" EntitySet="Hoadonnhap" />
+      <End Role="Chitiethdn" EntitySet="Chitiethdn" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitiethdn__masp__29572725" Association="Self.FK__Chitiethdn__masp__29572725">
+      <End Role="Dienthoai" EntitySet="Dienthoai" />
+      <End Role="Chitiethdn" EntitySet="Chitiethdn" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Dienthoai__madm__1B0907CE" Association="Self.FK__Dienthoai__madm__1B0907CE">
+      <End Role="Danhmucsp" EntitySet="Danhmucsp" />
+      <End Role="Dienthoai" EntitySet="Dienthoai" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Giaban__masp__1DE57479" Association="Self.FK__Giaban__masp__1DE57479">
+      <End Role="Dienthoai" EntitySet="Dienthoai" />
+      <End Role="Giaban" EntitySet="Giaban" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Donhang__makh__20C1E124" Association="Self.FK__Donhang__makh__20C1E124">
+      <End Role="Khachhang" EntitySet="Khachhang" />
+      <End Role="Donhang" EntitySet="Donhang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Donhang__mand__21B6055D" Association="Self.FK__Donhang__mand__21B6055D">
+      <End Role="Ngdung" EntitySet="Ngdung" />
+      <End Role="Donhang" EntitySet="Donhang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Giohang__makh__145C0A3F" Association="Self.FK__Giohang__makh__145C0A3F">
+      <End Role="Khachhang" EntitySet="Khachhang" />
+      <End Role="Giohang" EntitySet="Giohang" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hoadonnha__mancc__24927208" Association="Self.FK__Hoadonnha__mancc__24927208">
+      <End Role="NhaCungCap" EntitySet="NhaCungCap" />
+      <End Role="Hoadonnhap" EntitySet="Hoadonnhap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hoadonnhap__mand__25869641" Association="Self.FK__Hoadonnhap__mand__25869641">
+      <End Role="Ngdung" EntitySet="Ngdung" />
+      <End Role="Hoadonnhap" EntitySet="Hoadonnhap" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TinTuc__mand__6FE99F9F" Association="Self.FK__TinTuc__mand__6FE99F9F">
+      <End Role="Ngdung" EntitySet="Ngdung" />
+      <End Role="TinTuc" EntitySet="TinTuc" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

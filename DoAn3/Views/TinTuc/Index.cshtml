@@ -1,0 +1,152 @@
+﻿@model IEnumerable<DoAn3.Models.TinTuc>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutTinTuc.cshtml";
+}
+
+<head>
+    <link href="~/Content/css/tintuc.css" rel="stylesheet" type="text/css" />
+</head>
+@*Lam xuat ra don hang, thanh toan, mo ta co nhieu dong: dung ckeditor: what you see, what you and*@
+<div class="blog_wrapper">
+    <div class="container">
+        <div class="row" style="margin-left:-2.6%">
+            <div class="col-xl-9 col-lg-9 col-md-12">
+                <h1 class="hidden">Tin tức</h1>
+                <div>
+                    <div>
+                        <div class="itembb_full">                            
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                @foreach (var t in Model)
+                                {
+                                    <div class="itembb_full">
+                                        <div class="blogwp bloglr" style="width: 100%;float: left;padding-bottom: 40px;border-bottom: 1px solid #e4e4e4;margin-bottom: 40px;">
+                                            <a class="image-blog" style="width: 263px;height:auto;float: left;margin-bottom: 0px;" href="/TinTuc/Chitiettintuc/@t.matt" data-id="@t.matt" title="Điểm danh laptop chơi game “đỉnh” nhất năm nay">
+                                                <img class="imageload lazyload loaded" style="width:100%;height:auto;border-radius: 3px;" src="~/Content/Image Phones/Tintuc/@t.anh" alt="Điểm danh laptop chơi game “đỉnh” nhất năm nay" data-was-processed="true">
+
+                                            </a>
+                                            <div class="contentright" style="display: block;float: left;padding-left: 30px;width: calc(100% - 263px);">
+                                                <h3>
+                                                    <a style="color: #231f20;text-decoration: none;background: 0 0;font-weight:700" href="/TinTuc/Chitiettintuc/@t.matt" data-id="@t.matt" title="Điểm danh laptop chơi game “đỉnh” nhất năm nay">@t.tieude</a>
+                                                </h3>
+                                                <div class="posts">
+                                                    <i>@Html.FormatValue(t.ngaydang, "{0:dd-MM-yyyy hh:mm}")</i>
+                                                </div>
+                                                <p>
+                                                    @t.noidungdemo
+                                                    <a href="/TinTuc/Chitiettintuc/" class="doctiep" title="Đọc tiếp">[Đọc tiếp]</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 text-center">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 ">
+                <div class="camnang_block">
+                    <div class="row">
+                        <img src="~/Images/Screenshot 2020-11-09 095518.png" alt="Cửa hàng điện thoại chất lượng tốt nhất khu vực" />
+                    </div>
+                </div>
+                <div class="clearfix">
+                    <div class="">
+                        <h2 class="" style="font-size:18px;font-weight:bold;text-transform:uppercase;margin-bottom:25px;border-bottom:1px solid #e4e4e4;padding-bottom:15px;position:relative">
+                            <a style="color: #231f20;text-decoration: none;background: 0 0;" href="/chitiettintuc" title="Tin tức nổi bật">Tin tức nổi bật</a>
+                        </h2>
+                    </div>
+                    <div class="">
+                        @foreach (var t in Model)
+                        {
+
+                            <div class="item clearfix" style="margin-bottom:30px">
+                                <div class="post-thumb">
+                                    <a class="image-blog scale_hover" style="width:98px;height:auto;float:left;border-radius:3px" href="/TinTuc/Chitiettintuc/@t.matt" title="Những tin đồn iPhone 12 khiến người dùng “không buồn mới lạ”">
+
+                                        <img class="img_blog lazyload loaded" src="~/Content/Image Phones/Tintuc/@t.anh" style="margin:0;border: 0 none;max-width: 100%;height: auto;" alt="Những tin đồn iPhone 12 khiến người dùng “không buồn mới lạ”" data-was-processed="true">
+                                    </a>
+                                    <div class="contentright" style="display:block;float:left;padding-left: 15px;width: calc(100% - 98px);">
+                                        <h3 style="margin-top:-3px;line-height:15px"><a style="color: #231f20;text-decoration: none;background: 0 0;font-size:13px" title="Những tin đồn iPhone 12 khiến người dùng “không buồn mới lạ”" href="/TinTuc/Chitiettintuc/@t.matt" data-id="@t.matt">@t.tieude</a></h3>
+                                    </div>
+                                </div>
+
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="aside-item aside_product_new">
+                    <h2 class="h2_sidebar_blog" style="font-size:18px;font-weight:bold;text-transform:uppercase;margin-bottom:25px;border-bottom:1px solid #e4e4e4;padding-bottom:15px;position:relative">
+                        <a href="/san-pham-noi-bat" style="color: #231f20;text-decoration: none;background: 0 0;" title="Sản phẩm gợi ý">Sản phẩm gợi ý</a>
+                    </h2>
+                    <div class="aside-content related-product">
+                        <div class="product-mini-lists">
+                            <div class="products">
+                                <div class="product-mini-item clearfix   on-sale" style="padding:15px 15px 15px 10px;border-bottom: 1px solid #e4e4e4">
+                                    <a href="/samsung-galaxy-s10" class="product-img" style="width:97px;float:left;height:auto;position:relative" title="Điện thoại Samsung Galaxy S10+">
+                                        <img class="lazyload loaded" style="max-width:100%;max-width:100%;width:auto !important;" src="~/Content/Image Phones/Iphone/iphone-11-pro-max-256gb-black-600x600.jpg" alt="Điện thoại Samsung Galaxy S10+" data-was-processed="true">
+                                    </a>
+                                    <div class="product-info" style="float:right;margin-top:1%;margin-left:0% !important;width:141px">
+                                        <h3 style="font-size:13px;line-height:18px;font-weight:400;overflow:hidden;text-overflow:ellipsis;word-break:break-word;white-space:nowrap;margin:0;margin-bottom:6px"><a href="/samsung-galaxy-s10" style="color:#231f20;text-decoration:none;" title="Điện thoại Iphone 11 Promax" class="product-name">Điện thoại Iphone 11... </a></h3>
+                                        <div class="price-box">
+                                            <span class="price f-left" style="display:inline-block;width:100%"><span style="font-size:18px;font-weight:bold;color:#ef4339" class="price product-price">15.000.000₫</span> </span> <!-- Giá Khuyến mại -->
+                                            <span class="old-price  f-left" style="float:left !important;color:#acacac;font-size:15px"><del class="sale-price">16.000.000₫</del> </span> <!-- Giá gốc -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products">
+                                <div class="product-mini-item clearfix   on-sale" style="padding:15px 15px 15px 10px;border-bottom: 1px solid #e4e4e4">
+                                    <a href="/samsung-galaxy-s10" class="product-img" style="width:97px;float:left;height:auto;position:relative" title="Điện thoại Samsung Galaxy S10+">
+                                        <img class="lazyload loaded" style="max-width:100%;max-width:100%;width:auto !important;" src="~/Content/Image Phones/Iphone/iphone-7-plus-32gb-gold-600x600-600x600.jpg" alt="Điện thoại Iphone 7 Plus" data-was-processed="true">
+                                    </a>
+                                    <div class="product-info" style="float:right;margin-top:1%;margin-left:0% !important;width:141px">
+                                        <h3 style="font-size:13px;line-height:18px;font-weight:400;overflow:hidden;text-overflow:ellipsis;word-break:break-word;white-space:nowrap;margin:0;margin-bottom:6px"><a href="/samsung-galaxy-s10" style="color:#231f20;text-decoration:none;" title="Điện thoại Iphone 7 plus" class="product-name">Điện thoại Iphone 7 Plus ... </a></h3>
+                                        <div class="price-box">
+                                            <span class="price f-left" style="display:inline-block;width:100%"><span style="font-size:18px;font-weight:bold;color:#ef4339" class="price product-price">18.990.000₫</span> </span> <!-- Giá Khuyến mại -->
+                                            <span class="old-price  f-left" style="float:left !important;color:#acacac;font-size:15px"><del class="sale-price">20.000.000₫</del> </span> <!-- Giá gốc -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products">
+                                <div class="product-mini-item clearfix   on-sale" style="padding:15px 15px 15px 10px;border-bottom: 1px solid #e4e4e4">
+                                    <a href="/samsung-galaxy-s10" class="product-img" style="width:97px;float:left;height:auto;position:relative" title="Điện thoại Samsung Galaxy S10+">
+                                        <img class="lazyload loaded" style="max-width:100%;max-width:100%;width:auto !important;" src="~/Content/Image Phones/Iphone/xiaomi-mi-note-10-lite-trang-600x600-600x600.jpg" alt="Điện thoại XiaoMi Note S10+" data-was-processed="true">
+                                    </a>
+                                    <div class="product-info" style="float:right;margin-top:1%;margin-left:0% !important;width:141px">
+                                        <h3 style="font-size:13px;line-height:18px;font-weight:400;overflow:hidden;text-overflow:ellipsis;word-break:break-word;white-space:nowrap;margin:0;margin-bottom:6px"><a href="/samsung-galaxy-s10" style="color:#231f20;text-decoration:none;" title="Điện thoại Samsung Galaxy S10+" class="product-name">Điện thoại XiaoMi... </a></h3>
+                                        <div class="price-box">
+                                            <span class="price f-left" style="display:inline-block;width:100%"><span style="font-size:18px;font-weight:bold;color:#ef4339" class="price product-price">12.000.000₫</span> </span> <!-- Giá Khuyến mại -->
+                                            <span class="old-price  f-left" style="float:left !important;color:#acacac;font-size:15px"><del class="sale-price">13.000.000₫</del> </span> <!-- Giá gốc -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products">
+                                <div class="product-mini-item clearfix   on-sale" style="padding:15px 15px 15px 10px;border-bottom: 1px solid #e4e4e4">
+                                    <a href="/samsung-galaxy-s10" class="product-img" style="width:97px;float:left;height:auto;position:relative" title="Điện thoại Samsung Galaxy S10+">
+                                        <img class="lazyload loaded" style="max-width:100%;max-width:100%;width:auto !important;" src="~/Content/Image Phones/Iphone/samsung-galaxy-note-10-plus-171220-101247-600x600.jpg" alt="Điện thoại Samsung Galaxy Note 10+" data-was-processed="true">
+                                    </a>
+                                    <div class="product-info" style="float:right;margin-top:1%;margin-left:0% !important;width:141px">
+                                        <h3 style="font-size:13px;line-height:18px;font-weight:400;overflow:hidden;text-overflow:ellipsis;word-break:break-word;white-space:nowrap;margin:0;margin-bottom:6px"><a href="/samsung-galaxy-s10" style="color:#231f20;text-decoration:none;" title="Điện thoại Samsung Galaxy S10+" class="product-name">Điện thoại Samsung... </a></h3>
+                                        <div class="price-box">
+                                            <span class="price f-left" style="display:inline-block;width:100%"><span style="font-size:18px;font-weight:bold;color:#ef4339" class="price product-price">15.990.000₫</span> </span> <!-- Giá Khuyến mại -->
+                                            <span class="old-price  f-left" style="float:left !important;color:#acacac;font-size:15px"><del class="sale-price">16.990.000₫</del> </span> <!-- Giá gốc -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

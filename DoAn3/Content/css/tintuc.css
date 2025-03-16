@@ -1,0 +1,38 @@
+﻿body {
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #231f20;
+}
+a {
+    color: #231f20;
+    text-decoration: none;
+    background: 0 0;
+}
+.row{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+img{
+    vertical-align:middle;
+}
+.scale_hover img:hover {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+.itembb_full .itemblog_big {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.scale_hover {
+    display:block;overflow:hidden;
+}
+
+.loaded {
+    width:100%;border-radius:3px;margin-top:3px
+}

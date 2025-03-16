@@ -1,0 +1,19 @@
+﻿@model IEnumerable<DoAn3.Models.Danhmucsp>
+<div class="nn-block">
+    <div class="nn-megamenu-sidebar-title"><i class="glyphicon glyphicon-list"></i><h2 style="color:#000">Categories</h2></div>
+    @foreach (var c in Model)
+    {
+        <div class="nn-megamenu-sidebar">
+            <ul>
+                <li>
+                    @{var url = "/danh-muc-san-pham" + "/" + c.madm;
+                        }
+                    <a href="@url">
+                        <span class="col-md-3"><img src="/Images/@c.icon" class="img-responsive" /></span>
+                        <span class="col-md-9"><h5><strong>@c.tendm</strong></h5></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    }
+</div><!--end block category-->

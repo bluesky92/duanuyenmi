@@ -1,0 +1,301 @@
+﻿
+@{
+    ViewBag.Title = "Ngdung";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Assets/admin/css/sb-admin-2.min.css" rel="stylesheet" />
+
+
+</head>
+<body ng-app="Myapp">
+    <div class="content-wrapper" style="min-height: 1200.88px;" ng-controller="Mycontroller">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Danh Sách Nhân Viên</h1>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modal-default">Thêm+</button>
+                    </div>
+                </div>
+                <!-- ./row -->
+            </div><!-- /.container-fluid -->
+            <div class="modal fade" id="modal-default" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Thêm Nhân Viên</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card card-primary">
+                                <!-- form start -->
+                                <form role="form">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Mã Nhân Viên</label>
+                                            <input type="text" class="form-control" ng-model="mand" placeholder="Mã Nhân Viên">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Tên Nhân Viên </label>
+                                            <input type="text" class="form-control" ng-model="tennd" placeholder="Tên Nhân Viên">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Tài Khoản</label>
+                                            <input type="text" class="form-control" ng-model="taikhoan" placeholder="Tài Khoản">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Mật Khẩu</label>
+                                            <input type="text" class="form-control" ng-model="matkhau" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Địa Chỉ</label>
+                                            <input type="text" class="form-control" ng-model="diachi" placeholder="Địa Chỉ">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Số Điện Thoại</label>
+                                            <input type="text" class="form-control" ng-model="sdt" placeholder="Số Điện Thoại">
+                                        </div>
+                                        <div>
+                                            <ul>
+                                                <li>{{mand}}</li>
+                                                <li>{{tennd}}</li>
+                                                <li>{{taikhoan}}</li>
+                                                <li>{{matkhau}}</li>
+                                                <li>{{diachi}}</li>
+                                                <li>{{sdt}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <button type="submit" class="btn btn-primary " data-dismiss="modal" ng-click="Them()">Thêm</button>
+                        </div>
+
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table ng-init="getNd()" id="example" class="table table-bordered table-hover table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th>Mã Nhân Viên</th>
+                                                        <th>Tên Nhân Viên</th>
+                                                        <th>Tài Khoản</th>
+                                                        <th>Mật Khẩu</th>
+                                                        <th>Địa Chỉ</th>
+                                                        <th>Số Điện Thoại</th>
+                                                        <th>Tác Vụ</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="datasss">
+                                                    <tr ng-repeat="x in myData">
+                                                        <td>{{x.mand}}</td>
+                                                        <td>{{x.tennd}}</td>
+                                                        <td>{{x.taikhoan}}</td>
+                                                        <td>{{x.matkhau}}</td>
+                                                        <td>{{x.diachi}}</td>
+                                                        <td>{{x.sdt}}</td>
+                                                        <td style="text-align:center">
+                                                            <button class="btn btn-primary" data-toggle="modal" data-target="#modal-default1" ng-click="Laydl($index)">Sửa</button>
+                                                            <button class="btn btn-danger" data-toggle="modal" data-target="#modal-default2" ng-click="Delete($index)">Xóa</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+
+        <section class="content-header">
+            <div class="container-fluid">
+                @*<div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>Nhân Viên</h1>
+                        </div>
+                    </div>*@
+                <!-- ./row -->
+            </div><!-- /.container-fluid -->
+            <div class="modal fade" id="modal-default1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Sửa Nhân Viên</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card card-primary">
+                                <!-- form start -->
+                                <form role="form">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Mã Nhân Viên</label>
+                                            <input type="text" class="form-control" ng-model="mand" placeholder="Mã Nhân Viên">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Tên Nhân Viên </label>
+                                            <input type="text" class="form-control" ng-model="tennd" placeholder="Tên Nhân Viên">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Tài Khoản</label>
+                                            <input type="text" class="form-control" ng-model="taikhoan" placeholder="Tài Khoản">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Mật Khẩu</label>
+                                            <input type="text" class="form-control" ng-model="matkhau" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Địa Chỉ</label>
+                                            <input type="text" class="form-control" ng-model="diachi" placeholder="Địa Chỉ">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Số Điện Thoại</label>
+                                            <input type="text" class="form-control" ng-model="sdt" placeholder="Số Điện Thoại">
+                                        </div>
+                                        <div>
+                                            <ul>
+                                                <li>{{mand}}</li>
+                                                <li>{{tennd}}</li>
+                                                <li>{{taikhoan}}</li>
+                                                <li>{{matkhau}}</li>
+                                                <li>{{diachi}}</li>
+                                                <li>{{sdt}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <button type="submit" class="btn btn-primary" onclick="Edit()" data-dismiss="modal" ng-click="Sua()">Save</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+        </section>
+
+        <section class="content-header">
+            <div class="container-fluid">
+                @*<div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>Nhân Viên</h1>
+                        </div>
+                    </div>*@
+                <!-- ./row -->
+            </div><!-- /.container-fluid -->
+            <div class="modal fade" id="modal-default2" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Xóa Nhân Viên Này ?</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card card-primary">
+                                <!-- form start -->
+                                <form role="form">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Mã Nhân Viên</label>
+                                            <input type="text" class="form-control" ng-model="mand" placeholder="Mã Nhân Viên">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Tên Nhân Viên </label>
+                                            <input type="text" class="form-control" ng-model="tennd" placeholder="Tên Nhân Viên">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Tài Khoản</label>
+                                            <input type="text" class="form-control" ng-model="taikhoan" placeholder="Tài Khoản">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Mật Khẩu</label>
+                                            <input type="text" class="form-control" ng-model="matkhau" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Địa Chỉ</label>
+                                            <input type="text" class="form-control" ng-model="diachi" placeholder="Địa Chỉ">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Số Điện Thoại</label>
+                                            <input type="text" class="form-control" ng-model="sdt" placeholder="Số Điện Thoại">
+                                        </div>
+                                        <div>
+                                            <ul>
+                                                <li>{{mand}}</li>
+                                                <li>{{tennd}}</li>
+                                                <li>{{taikhoan}}</li>
+                                                <li>{{matkhau}}</li>
+                                                <li>{{diachi}}</li>
+                                                <li>{{sdt}}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <label>Bạn có chắc chắn muốn xóa?</label>
+                            <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="Oke()">OK</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+        </section>
+    </div>
+    <script type="text/javascript" src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/ThemSuaXoa.js"></script>
+
+
+    <script src="~/Assets/admin/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Assets/admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Assets/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+    </script>
+</body>
+
+

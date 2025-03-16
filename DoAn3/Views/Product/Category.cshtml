@@ -1,0 +1,73 @@
+﻿@model PagedList.IPagedList<DoAn3.Models.Dienthoai>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_LayoutCategory.cshtml";
+}
+
+<div>
+    <br />
+    <br />
+
+    @foreach (var d in Model)
+    {
+        <div class="col-md-3" style="border-right: 1px solid #eee;border-bottom: 1px solid #eee;border-left: 1px solid #eee;border-top: 1px solid #eee">
+            <div class="nn-product-box">
+                <a href="/Product/Detail/@d.masp">
+                    <img class=" zoom img-responsive" src="~/Content/Image Phones/Iphone/@d.anh" />
+                </a>
+                <div class="nn-product-box-descriptions">
+                    <h3 class="nn-product-box-name">
+                        <a href="/Product/Detail/@d.masp" title="@d.tensp">@d.tensp</a>
+                    </h3>
+                    <div class="nn-product-box-price ">
+                        <span class="" style="font-weight:600;color:red">@Html.FormatValue(d.giasp, "{0:#,##0}")&#8363;</span>
+                    </div>                    
+                </div>
+            </div>
+            <br />
+        </div>
+    }
+    <br />
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Category", 
+        new { page }))
+
+    <style>
+        .zoom {
+            padding: 10px;
+            transition: transform .3s;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .zoom:hover {
+            -ms-transform: scale(1.15); /* IE 9 */
+            -webkit-transform: scale(1.15); /* Safari 3-8 */
+            transform: scale(1.15);
+            overflow: hidden;
+        }
+    </style>
+</div>
+
+<div class="clearfix"></div>
+@section scripts{
+    <script>
+        $(function () {
+            $(".add-to-cart").click(function () {
+                pid = $(this).attr("data-id");
+                $.ajax({
+                    url: "/Cart/Add",
+                    data: { id: pid },
+                    success: function (response) {
+                        alert('Thêm vào giỏ thành công!');
+                        $("#nn-cart-count").html(response.Count);
+                        $("#nn-cart-total").html(response.Total);
+                    }
+                });
+            });
+        });
+    </script>
+}
+
+
