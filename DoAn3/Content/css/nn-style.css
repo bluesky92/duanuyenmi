@@ -5,8 +5,8 @@
 .glyphicon-shopping-cart{color:#fff;}
 .glyphicon-shopping-cart:hover{color:#fff;}
 .btn-default{
-	background:#ed6f6f;
-	}
+        background:#ed6f6f;
+        }
 .btn-default:hover{
 background:#7ccfc4;
 }
@@ -14,79 +14,80 @@ input:focus {
     border: 1px solid #eee !important;
 }
 input[type=text]{
-	color:#666;
-	}
+        color:#666;
+        }
 .nn-header{
-	height:118px;
-	margin-top:50px;	
-	}
+        height:auto;
+        min-height:80px;
+        margin-top:0;        
+        }
 
 <!----------------->
 <!-- Top Cart Box -->
 <!----------------->
 .nn-cart-box{
-	position:absolute;
+        position:relative;
 }
 .nn-top-cart-wraper{
-	padding-left:30px;
-	position:relative;
-	width:50px;
-	}
+        padding-left:15px;
+        position:relative;
+        width:auto;
+        }
 .nn-top-cart-contain{
-	background:#ed6f6f;
+        background:#ed6f6f;
 }
 .nn-glyphicon-shopping-cart-larger{
-	font-size:25px;
-	padding:5px 5px;
-	
+        font-size:1.5rem;
+        padding:5px;
+        
 }
 .nn-top-cart-title{
-	padding:5px 5px;
-	font-color:#fff;
+        padding:5px;
+        font-color:#fff;
 }
 .nn-top-cart-title a{
-	
-	color:#fff;
+        
+        color:#fff;
 }
 .nn-top-cart-title a:hover,focus{
-	color:#fff;
-	text-decoration:none;
+        color:#fff;
+        text-decoration:none;
 }
 .nn-top-cart-title:hover .caret{
-	color:#7ccfc4;
-	
+        color:#7ccfc4;
+        
 }
 <!----------------->
 <!-- Navigation  -->
 <!----------------->
 .navbar {
-	background:#fff;
-	
-	}
+        background:#fff;
+        
+        }
 .navbar-default {
-	background:#fed101;
-	border:none;
+        background:#fed101;
+        border:none;
 }
 .mega-dropdown a{
-	text-transform:uppercase;
+        text-transform:uppercase;
 }
 mega-dropdown a:hover{
-	text-color:#7ccfc4;
+        text-color:#7ccfc4;
 }
 .navbar-default .navbar-nav>a:hover{
-	color:#fff; 
+        color:#fff; 
 }
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus {
-	color:#fff;
-	background-color: #ed6f6f;
+        color:#fff;
+        background-color: #ed6f6f;
 }
 .navbar-nav a{
-	text-transform:uppercase;
+        text-transform:uppercase;
 }
 .navbar-nav li a:hover,focus{
-	color:#fff;
-	background-color: #ed6f6f;
-	text-transform:uppercase;}
+        color:#fff;
+        background-color: #ed6f6f;
+        text-transform:uppercase;}
 <!--megaa dropdown menu-->
 .navbar-nav>li>.dropdown-menu {
     margin-top:20px;
@@ -94,9 +95,10 @@ mega-dropdown a:hover{
     border-top-right-radius:4px;
 }
 .navbar-default .navbar-nav>li>a {
-   width:116px;
+   width:auto;
     font-weight:bold;
     text-align:center;
+    padding: 15px 10px;
 }
 .mega-dropdown {
   position: static !important;
@@ -108,7 +110,7 @@ mega-dropdown a:hover{
     width: 100%;
     box-shadow: none;
     -webkit-box-shadow: none;
-	background-color:#fff;
+        background-color:#fff;
 }
 
 .mega-dropdown-menu > li > ul {
@@ -150,256 +152,254 @@ mega-dropdown a:hover{
 .nn-megamenu-sidebar-title {
     background-color: #fed101;
     position: relative;
-    padding-left: 80px;
+    padding-left: 60px;
     padding-top: 1px;
-    height: 60px;
+    height: auto;
+    min-height: 50px;
     text-transform: uppercase;
     color: #fff;
 }
 .nn-megamenu-sidebar-title h2{
-	font-size:18px;
-	font-weight:bold;
-	}
+        font-size:18px;
+        font-weight:bold;
+        }
 .nn-megamenu-sidebar-title .glyphicon {
-left: 0;
-position: absolute;
-width: 65px;
-height: 58px;
-line-height: 58px;
-text-align: center;
-border-right: 1px solid #fff;
-font-size: 18px;
-color: #000;
+    left: 0;
+    position: absolute;
+    width: 50px;
+    height: auto;
+    line-height: 50px;
+    text-align: center;
+    border-right: 1px solid #fff;
+    font-size: 18px;
+    color: #000;
 }
 
 .nn-megamenu-sidebar{
-	border-top:2px solid white;
-	padding:0;
-	margin:0;
-	height:50px;
-	background:#f5f5f5;	
-	}
+        border-top:2px solid white;
+        padding:0;
+        margin:0;
+        height:auto;
+        min-height:40px;
+        background:#f5f5f5;     
+        }
 .nn-megamenu-sidebar ul li{
-	list-style:none;
-	
-	
+        list-style:none;
+        
+        
 }
 .nn-megamenu-sidebar ul li a{
-	text-decoration:none;
-	color:#000000;
-	font-size:15px;
-	margin-top:15px;
-	padding-left:0px;
-	font-weight:bold;
-	text-transform:uppercase;
-	
+        text-decoration:none;
+        color:#000000;
+        font-size:15px;
+        margin-top:15px;
+        padding-left:0px;
+        font-weight:bold;
+        text-transform:uppercase;
+        
 }
 .nn-megamenu-sidebar ul li a:hover {
     color: #288ad9;
 }
 .nn-megamenu-sidebar ul li a:hover img{
-	color:#000;
+        color:#000;
 }
 .nn-megamenu-sidebar a span img{
-	height:15px;
-	width:15px;
-	margin:15px 0;
+        height:auto;
+        width:15px;
+        max-width:100%;
+        margin:15px 0;
 }
 
 .nn-megamenu-sidebar a h5{
-	
-	margin:15px 0;
-	
+        
+        margin:15px 0;
+        
 }
 .nn-block{
-	margin-bottom:15px;
+        margin-bottom:15px;
     border:1px solid #d8d8d8;
-	}
+        }
 .nn-block-margin-top30px {
     margin-top: 14px;
 }
 .nn-block-margin-top30px > h2 {
-    font-size:26px;
-    /*line-height:18px;*/
+    font-size:1.6rem;
     font-weight:600;
 
 
-}	
+}       
 
 .nn-product-box{
-	margin-bottom:30px;
-    /*width:15em;*/
-	}
+        margin-bottom:30px;
+        }
 .nn-product-box-descriptions{
-	padding:0 10px 10px 10px;
+        padding:0 10px 10px 10px;
     background-color:#f3f3f3;
-    /*text-align:center;*/
-	}
+        }
 .nn-product-box-name > a{
-	
-	font-size:14px;
-	margin-bottom:10px;
-	color:#444;
-	/*text-transform: uppercase;*/
+        
+        font-size:14px;
+        margin-bottom:10px;
+        color:#444;
 }
  .nn-product-box-name > a:hover {
      color: #288ad9;
      text-decoration:none;
  }
 .nn-product-box-price{
-	font-size: 18px;
-	margin-bottom: 10px;
-	line-height: 1;	
-	color: #ed6f6f;
+        font-size: 18px;
+        margin-bottom: 10px;
+        line-height: 1; 
+        color: #ed6f6f;
 }
 .nn-product-box-actions{
-	margin-bottom:10px;
-	}
+        margin-bottom:10px;
+        }
 .nn-color-white{
-	color:#fff}	
+        color:#fff}     
 .nn-block-product ul li{
-	list-style:none;
-	margin:0;
-	padding:0;
-	display:inline-block;
-	margin-top:20px;
+        list-style:none;
+        margin:0;
+        padding:0;
+        display:inline-block;
+        margin-top:20px;
 }
 .nn-block-product ul li:hover{
-	border:1px solid #ed6f6f;
-}		
+        border:1px solid #ed6f6f;
+}               
 .nn-block-product ul{
-	float:left;
-	margin:0;
-	padding:0;}	
+        float:left;
+        margin:0;
+        padding:0;}     
 
 
 .nn-block-product-sidebar-name a{
-	text-decoration:none;
-	color:#7b7b7b;
-	font-weight:bolder;
-	font-size:14px;
+        text-decoration:none;
+        color:#7b7b7b;
+        font-weight:bolder;
+        font-size:14px;
 }
 .nn-block-product-sidebar-name a:hover{
-	
-	color:#7ccfc4;
-	
+        
+        color:#7ccfc4;
+        
 }
 .nn-block-product-sidebar-name{
-	font-size:12px;
-	font-weight:bold;
-	color:#7b7b7b;
+        font-size:12px;
+        font-weight:bold;
+        color:#7b7b7b;
 }
 .nn-block-product-sidebar-price{
-	color:#ed6f6f;
-	font-weight:bold;
-	font-size:18px;
+        color:#ed6f6f;
+        font-weight:bold;
+        font-size:18px;
 }
 
 
 .nn-margin-top30px{
-	margin-top:30px;
+        margin-top:30px;
 }
 
 
-
-	
+        
 .nn-bordered{
-	margin-bottom:20px;
-	border-top:1px dotted #ebebeb;
-	border-bottom:1px dotted #ebebeb;
+        margin-bottom:20px;
+        border-top:1px dotted #ebebeb;
+        border-bottom:1px dotted #ebebeb;
 }
 .nn-bordered-top{
-	border-top:1px dotted #ebebeb;
-	}
+        border-top:1px dotted #ebebeb;
+        }
 .nn-bordered-bottom{
-	border-bottom:1px dotted #ebebeb;
-	}
+        border-bottom:1px dotted #ebebeb;
+        }
 #nn-main-slider-carousel{
-	margin-bottom:20px;
+        margin-bottom:20px;
 }
 
 .nn-banner{
-	margin-bottom:20px;
-	}
+        margin-bottom:20px;
+        }
 .nn-hover-zoom{
-	webkit-transition: 0.3s all ease-in-out;
-	transition: 0.3s all ease-in-out;
-	-webkit-backface-visibility: hidden;
-	-webkit-perspective: 1000;
-	
-	
-	}
+        webkit-transition: 0.3s all ease-in-out;
+        transition: 0.3s all ease-in-out;
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000;
+        
+        
+        }
 .nn-text-align-right{
-	text-align:right;
-	}
+        text-align:right;
+        }
 .nn-text-align-left{
-	text-align:left; 
-	} 
+        text-align:left; 
+        } 
 .nn-text-align-center{
-	text-align:center; 
-	} 
-	
+        text-align:center; 
+        } 
+        
 .nn-banner-content{
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	top: 0;
-	color: #fff;
-	z-index: 2;
-	padding: 10px;
-	margin: 5px;
-	font-size: 13px;
-	}
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        color: #fff;
+        z-index: 2;
+        padding: 10px;
+        margin: 5px;
+        font-size: 13px;
+        }
 .nn-more-title{
-	position: relative;
+        position: relative;
 clear: both;
-	}
+        }
 .title{clear:both
 z-index:2
 }
 .title:before {
-	content: "";
-	display: block;
-	border-top: solid 1px #ebebeb;
-	width: 100%;
-	position: absolute;
-	top: 50%;
-	z-index: 1;
-	}
+        content: "";
+        display: block;
+        border-top: solid 1px #ebebeb;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        z-index: 1;
+        }
 .title span{
-	padding: 0 20px;
-	z-index: 2;
-	position: relative;
-	display: inline-block;
-	background: #fff;
-	text-transform: uppercase;
-	font-size:bolder;
-	}	
+        padding: 0 20px;
+        z-index: 2;
+        position: relative;
+        display: inline-block;
+        background: #fff;
+        text-transform: uppercase;
+        font-size:bolder;
+        }       
 .nn-show-more-link{
-	position: absolute;
-	right: 0;
-	top: 3px;
-	font-size: 11px;
-	color: #a7a9aa;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	text-decoration: none;
+        position: absolute;
+        right: 0;
+        top: 3px;
+        font-size: 11px;
+        color: #a7a9aa;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-decoration: none;
 }
 .nn-show-more-link:hover{
-	color:#006c6c;
-	}
+        color:#006c6c;
+        }
 
 
 
 .nn-add-to-cart{}
 
 .nn-postBanner{
-	position:relative;
-	margin-bottom:20px;
+        position:relative;
+        margin-bottom:20px;
 }
 
 
 .nn-block-title{
-	border-bottom:1px solid #ECECEC ;
-	}
+        border-bottom:1px solid #ECECEC;
+}
