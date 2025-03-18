@@ -1,0 +1,134 @@
+/* Responsive CSS for duanuyenmi project */
+
+/* Icon bar responsive styles */
+.icon-bar {
+    position: fixed;
+    bottom: 20%;
+    right: 0;
+    width: auto;
+    z-index: 999;
+    transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+}
+
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 16px;
+}
+
+/* Header styles */
+.header-banner {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.nn-header {
+    background-color: #ef4339;
+    margin: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.logo-img {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+/* Sidebar container */
+.sidebar-container {
+    margin-bottom: 20px;
+}
+
+/* Main content container */
+.main-content {
+    margin-bottom: 20px;
+}
+
+/* Media Queries */
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width: 767px) {
+    .icon-bar {
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .icon-bar a {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    .nn-header {
+        height: auto;
+    }
+    
+    .sidebar-container {
+        order: 2;
+    }
+    
+    .main-content {
+        order: 1;
+    }
+    
+    .navbar-default .navbar-nav > li > a {
+        width: 100%;
+        text-align: left;
+    }
+    
+    .nn-megamenu-sidebar-title {
+        padding-left: 15px;
+    }
+    
+    .nn-megamenu-sidebar-title .glyphicon {
+        position: relative;
+        width: auto;
+        height: auto;
+        border-right: none;
+        margin-right: 10px;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .icon-bar {
+        right: 0;
+        width: auto;
+    }
+    
+    .icon-bar a {
+        padding: 12px;
+        font-size: 16px;
+    }
+    
+    .navbar-default .navbar-nav > li > a {
+        width: auto;
+        padding: 15px 10px;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .icon-bar a {
+        padding: 14px;
+        font-size: 18px;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .icon-bar a {
+        padding: 16px;
+        font-size: 20px;
+    }
+}
